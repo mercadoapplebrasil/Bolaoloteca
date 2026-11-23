@@ -180,6 +180,16 @@ h2 i{color:var(--red);font-style:normal}
 .hc p{margin:0;font-size:17px;color:var(--tx)}
 .hc .ano{font-family:Oswald,sans-serif;font-size:40px;line-height:1;color:var(--red);float:right;margin-left:12px}
 
+.btn.exp{background:var(--bg2);border:2px solid var(--line);color:var(--tx);width:100%;gap:8px;margin-bottom:14px}
+.btn.exp span{color:var(--red);transition:transform .2s}
+.btn.exp[aria-expanded=true] span{transform:rotate(180deg)}
+.fixa{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#0A0A0A;border-top:3px solid var(--red);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:12px;align-items:center;transform:translateY(110%);transition:transform .25s}
+.fixa.on{transform:none}
+.fixa div{flex:1;min-width:0;line-height:1.2;font-size:14px;color:var(--mut)}
+.fixa b{display:block;font-family:Oswald,sans-serif;font-size:22px;color:var(--tx)}
+.fixa a.btn{flex:none;width:auto;min-height:50px;padding:0 18px;font-size:17px}
+@media(min-width:820px){.fixa{display:none}}
+@media(prefers-reduced-motion:reduce){.fixa,.btn.exp span{transition:none}html{scroll-behavior:auto}}
 .conta .campo input{letter-spacing:2px}
 .pin{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .hist2{list-style:none;margin:14px 0 0;padding:0}
@@ -344,7 +354,8 @@ footer a{color:var(--rosa)}
 <section class="w" id="historia">
   <h2>A <i>história</i> da Loteca</h2>
   <p class="sub">Da Loteria Esportiva à Loteca de hoje. E de onde vem o "deu zebra".</p>
-  <div class="hist">
+  <button class="btn exp" id="hBtn" type="button" aria-expanded="false" aria-controls="hLista">Ler a história <span aria-hidden="true">▾</span></button>
+  <div class="hist" id="hLista" hidden>
     <div class="hc"><span class="ano">1964</span><b>Nasce a zebra</b><p>O técnico Gentil Cardoso, da pequena Portuguesa carioca, disse antes de pegar o Vasco que vencer seria "como dar zebra no jogo do bicho", bicho que não existe na tabela. A Portuguesa venceu, e a zebra virou sinônimo de surpresa no futebol.</p></div>
     <div class="hc"><span class="ano">1970</span><b>A Loteria Esportiva</b><p>Criada por decreto em 1969, teve o primeiro teste em 19 de abril de 1970, antes da Copa do México. Prêmio fixo, bilhete barato e o país inteiro marcando 1, X e 2.</p></div>
     <div class="hc"><span class="ano">1972</span><b>O primeiro milionário</b><p>Uma zebra num Corinthians x Juventus, no Pacaembu, fez o primeiro milionário da modalidade: Eduardo Varela, o "Dudu da Loteca".</p></div>
@@ -363,6 +374,7 @@ footer a{color:var(--rosa)}
 </section>
 </main>
 
+<div class="fixa" id="fixa" hidden><div><b id="fxV"></b><span id="fxR"></span></div><a class="btn p" id="fxB" rel="noopener">Reservar cota</a></div>
 <footer>
   <div class="w">
     <div>
@@ -624,6 +636,20 @@ document.getElementById("fLogin").addEventListener("submit",function(e){
 
 document.getElementById("lk24").href=CONFIG.site24h; document.getElementById("lkCx").href=CONFIG.linkCaixa; document.getElementById("lkLo").href=CONFIG.loterica;
 document.getElementById("rdWa").href=wa("Olá! Vim pelo site Bolão Loteca.");
+(function(){ var b=document.getElementById("hBtn"), l=document.getElementById("hLista");
+  b.addEventListener("click",function(){ var a=l.hidden; l.hidden=!a; b.setAttribute("aria-expanded",a?"true":"false"); b.firstChild.textContent=a?"Ocultar a história ":"Ler a história "; });
+  if(location.hash==="#historia"){ b.click(); }
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="#historia"]'),function(x){ x.addEventListener("click",function(){ if(l.hidden) b.click(); }); });
+})();
+(function(){ // barra fixa de reserva no celular: aparece quando o card do bolão sai da tela
+  var bo=LOTECA.bolao, fx=document.getElementById("fixa"), box=document.getElementById("bolaoBox");
+  if(!bo || !aberto() || bo.restam===0 || !("IntersectionObserver" in window)) return;
+  document.getElementById("fxV").textContent="Cota "+bo.valor;
+  document.getElementById("fxR").textContent=bo.restam!=null?"Restam "+bo.restam+" de "+bo.cotas:"Bolão da Loteca "+LOTECA.concurso;
+  document.getElementById("fxB").href=wa("Olá! Quero reservar uma cota do bolão da Loteca "+LOTECA.concurso+" ("+bo.formato+"), cota de "+bo.valor+".");
+  fx.hidden=false;
+  new IntersectionObserver(function(e){ var on=!e[0].isIntersecting && e[0].boundingClientRect.top<0; fx.classList.toggle("on",on); document.body.style.paddingBottom=on?"76px":""; }).observe(box);
+})();
 carregar(); tique(); setInterval(tique,30000); setInterval(function(){ if(aberto()) carregar(); },120000);
 </script>
 </body>

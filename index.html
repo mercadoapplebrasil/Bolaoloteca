@@ -10,7 +10,15 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bolaoloteca.com.br/">
 <meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://bolaoloteca.com.br/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://bolaoloteca.com.br/">
 <meta name="theme-color" content="#121212">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Bolão Loteca">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -53,12 +61,13 @@ h1 small{display:block;font-size:.42em;color:var(--tx);font-style:normal;letter-
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .chip{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;border-radius:12px;background:transparent;border:2px solid var(--tx);color:var(--tx);font-weight:700;text-decoration:none;font-size:17px}
 .chip.r{background:var(--red);border-color:var(--red);color:#fff}
-.zebra{width:200px;max-width:46%;margin:-10px -6px -26px auto;display:block}
+.fala{display:flex;align-items:flex-end;gap:16px;margin-top:16px}
+.zebra{width:104px;flex:none;margin-bottom:-6px}
 .zebra svg{width:100%;height:auto;display:block}
-@media(min-width:720px){.zebra{position:absolute;right:18px;bottom:0;width:290px;margin:0}.hero .w{min-height:360px}}
-.balao{position:relative;background:#fff;color:#121212;border-radius:14px;padding:10px 14px;font-weight:700;font-size:16px;margin:16px 0 0;max-width:420px}
-.balao::after{content:"";position:absolute;right:-10px;top:14px;border:10px solid transparent;border-left-color:#fff;border-right:0}
-@media(max-width:719px){.balao{max-width:56%}}
+@media(min-width:720px){.zebra{position:absolute;right:18px;bottom:0;width:290px;margin:0}.hero .w{min-height:380px}.hs,.hp,.fala{max-width:600px}}
+.balao{position:relative;background:#fff;color:#121212;border-radius:14px;padding:10px 14px;font-weight:700;font-size:16px;flex:1;min-width:0;margin-bottom:34px}
+.balao::after{content:"";position:absolute;right:-10px;bottom:14px;border:10px solid transparent;border-left-color:#fff;border-right:0}
+
 
 section.w{padding-top:40px}
 h2{margin:0 0 6px;font-size:clamp(30px,6vw,40px);line-height:1.05}
@@ -117,6 +126,20 @@ h2 i{color:var(--red);font-style:normal}
 .aviso{background:#2A2210;border:1px solid #6B5A1E;border-radius:14px;padding:14px 16px;font-size:17px;margin:0 0 18px;color:#F6E7B5}
 .aviso b{display:block;font-size:18px;margin-bottom:2px;color:var(--gold)}
 .esc{display:none !important}
+[hidden]{display:none !important}
+.teste{background:var(--gold);color:#121212;text-align:center;font-weight:700;padding:10px 16px;font-size:16px}
+.vz{text-align:center;padding:8px 0}
+.vz p{margin:0 0 14px;color:var(--mut)}
+.share{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;margin-top:12px;border-radius:12px;border:2px solid #2FA35A;color:#7BE0A0;font-weight:700;text-decoration:none;font-size:17px}
+.links{display:grid;gap:12px}
+@media(min-width:720px){.links{grid-template-columns:repeat(3,1fr)}}
+.lk{display:flex;flex-direction:column;gap:4px;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:18px;text-decoration:none;color:var(--tx);min-height:120px}
+.lk:hover{border-color:var(--red)}
+.lk b{font-family:Oswald,sans-serif;font-size:22px;text-transform:uppercase}
+.lk span{font-size:16px;color:var(--mut)}
+.lk em{font-style:normal;font-size:15px;color:var(--rosa);font-weight:700;margin-top:auto}
+.hist2 small{display:block;font-size:13px;color:var(--mut);letter-spacing:2px;font-family:ui-monospace,Menlo,monospace}
+.sair{background:none;border:0;color:var(--rosa);font:inherit;font-size:16px;font-weight:700;text-decoration:underline;cursor:pointer;min-height:44px;padding:0;margin-top:8px}
 
 .barra{grid-column:2;display:flex;height:34px;border-radius:10px;overflow:hidden;background:#333;margin-top:6px}
 .barra i{display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:800;font-size:15px;color:#fff;min-width:0;overflow:hidden;white-space:nowrap}
@@ -182,10 +205,13 @@ footer a{color:var(--rosa)}
       <a href="#ranking">Ranking</a>
       <a href="#conta">Minha área</a>
       <a href="#historia">História</a>
+      <a href="#mais">Mais bolões</a>
     </nav>
   </div>
 </header>
 
+<div class="teste" id="faixaTeste" hidden>MODO TESTE · dados de exemplo, nada aqui vale</div>
+<noscript><p style="padding:18px">Ative o JavaScript do navegador para ver a grade e dar seu palpite.</p></noscript>
 <div class="hero">
   <div class="w">
     <p class="eye" id="hEye">Loteca da semana</p>
@@ -193,12 +219,9 @@ footer a{color:var(--rosa)}
     <div class="d hp" id="hPremio"></div>
     <p class="hs" id="hSub"></p>
     <div class="cd" id="hCd" hidden></div>
-    <div class="balao" id="balao">Aqui o palpite é sério. Se der zebra, eu avisei.</div>
-    <div class="chips">
-      <a class="chip r" href="#bolao">Ver o bolão</a>
-      <a class="chip" href="#palpite">Dar meu palpite</a>
-    </div>
-    <div class="zebra"><svg viewBox="0 0 300 320" role="img" aria-label="Dona Zebra, a mascote, com uma bola de futebol" xmlns="http://www.w3.org/2000/svg">
+    <div class="fala">
+      <div class="balao" id="balao">Aqui o palpite é sério. Se der zebra, eu avisei.</div>
+      <div class="zebra"><svg viewBox="0 0 300 320" role="img" aria-label="Dona Zebra, a mascote, com uma bola de futebol" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <clipPath id="zc"><path d="M150 150c-18 0-30 14-32 40l-4 130h74l-6-130c-2-26-14-40-32-40z"/></clipPath>
         <clipPath id="zh"><ellipse cx="160" cy="110" rx="66" ry="60"/></clipPath>
@@ -232,6 +255,11 @@ footer a{color:var(--rosa)}
       <path d="M71 244l19-6 7 18-12 12-8-4z M37 244l-19-6-7 18 12 12 8-4z M48 264l-9 16 9 16h12l9-16-9-16z" fill="#121212"/>
       <path d="M54 232l-1-14 M71 244l17-12 M37 244l-17-12 M78 268l15 8 M30 268l-15 8" stroke="#121212" stroke-width="4" stroke-linecap="round"/>
     </svg></div>
+    </div>
+    <div class="chips">
+      <a class="chip r" href="#bolao">Ver o bolão</a>
+      <a class="chip" href="#palpite">Dar meu palpite</a>
+    </div>
   </div>
 </div>
 
@@ -242,7 +270,7 @@ footer a{color:var(--rosa)}
 
 <section class="w" id="grade">
   <h2>Os <i>14</i> jogos</h2>
-  <p class="sub">1 = time da casa · X = empate · 2 = visitante</p>
+  <p class="sub">1 = time da casa · X = empate · 2 = visitante. Vale o placar do tempo normal, sem prorrogação nem pênaltis.</p>
   <div class="box"><ol class="jogos" id="listaGrade"></ol></div>
 </section>
 
@@ -250,10 +278,11 @@ footer a{color:var(--rosa)}
   <h2>Palpite da <i>galera</i></h2>
   <p class="sub">Dê seu 1, X ou 2 nos 14 jogos. Quem acertar mais sobe no ranking.</p>
   <div class="aviso"><b>É brincadeira, não é aposta.</b>O palpite não vale prêmio nem concorre na Loteca. Pra concorrer de verdade, compre uma cota do bolão.</div>
+  <div class="box vz" id="palVazio" hidden><p>Os palpites abrem assim que a grade da semana sair.</p><a class="btn g" id="palAvisa" rel="noopener">Me avisa no WhatsApp</a></div>
   <form class="box pal" id="fPal" novalidate>
     <label class="campo"><span>Seu nome</span><input id="fNome" name="nome" autocomplete="given-name" maxlength="40" required></label>
     <label class="campo"><span>Seu WhatsApp (com DDD)</span><input id="fWa" name="whats" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(19) 99999-9999" maxlength="16" required></label>
-    <label class="campo"><span>Crie um PIN de 4 números (pra entrar na Minha área)</span><input id="fPin" name="pin" type="password" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" required></label>
+    <label class="campo" id="cPin"><span>Crie um PIN de 4 números (pra ver seu histórico e mudar o palpite)</span><input id="fPin" name="pin" type="password" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" required></label>
     <p style="margin:-6px 0 14px;font-size:15px;color:var(--mut)">Seu WhatsApp não aparece no site. Só o primeiro nome entra no ranking.</p>
     <ol class="jogos" id="listaPal"></ol>
     <label class="ck"><input type="checkbox" id="fOpt"> <span>Quero receber no WhatsApp o bolão da Loteca de cada semana.</span></label>
@@ -262,6 +291,7 @@ footer a{color:var(--rosa)}
       <p id="fConta">0 de 14 jogos</p>
       <button class="btn p" id="fEnv" type="submit" disabled>Enviar meu palpite</button>
       <div class="msg" id="fMsg" role="status"></div>
+      <a class="share" id="fShare" hidden target="_blank" rel="noopener">Chamar a galera no WhatsApp</a>
     </div>
   </form>
 </section>
@@ -273,6 +303,7 @@ footer a{color:var(--rosa)}
     <div class="turma" id="turma" aria-label="A turma do palpite do povo"></div>
     <div class="leg"><span><i style="background:#D5261F"></i>1 casa</span><span><i style="background:#6B6B6B"></i>X empate</span><span><i style="background:#2E6BD6"></i>2 fora</span></div>
     <ol class="jogos" id="listaPovo"></ol>
+    <a class="share" id="povoShare" target="_blank" rel="noopener">Chamar a galera pra palpitar</a>
   </div>
 </section>
 
@@ -286,18 +317,21 @@ footer a{color:var(--rosa)}
   <h2>Minha <i>área</i></h2>
   <p class="sub">Entre com seu WhatsApp e o PIN que você criou no palpite.</p>
   <div class="box">
+    <p class="vazio" id="lBreve" hidden>A Minha área abre junto com os palpites on-line. Falta pouco.</p>
     <form id="fLogin" novalidate>
       <div class="pin">
         <label class="campo"><span>WhatsApp</span><input id="lWa" type="tel" inputmode="numeric" placeholder="(19) 99999-9999" maxlength="16"></label>
         <label class="campo"><span>PIN</span><input id="lPin" type="password" inputmode="numeric" maxlength="4"></label>
       </div>
       <button class="btn g" type="submit">Entrar</button>
+      <p style="font-size:15px;color:var(--mut);margin:12px 0 0">Esqueceu o PIN? Chama no WhatsApp que a gente zera. Ainda não tem PIN? Ele é criado quando você manda o primeiro palpite.</p>
       <div class="msg" id="lMsg" role="status"></div>
     </form>
     <div id="lArea" hidden>
       <p style="margin:0"><b id="lNome"></b> · <span id="lResumo"></span></p>
       <ul class="hist2" id="lHist"></ul>
-      <p style="font-size:15px;color:var(--mut);margin:12px 0 0">Esqueceu o PIN? Chama no WhatsApp que a gente troca.</p>
+      <p style="font-size:15px;color:var(--mut);margin:12px 0 0">Pra mudar o palpite do concurso aberto, é só mandar de novo com o mesmo WhatsApp e PIN.</p>
+      <button class="sair" type="button" id="lSair">Sair</button>
     </div>
   </div>
 </section>
@@ -314,6 +348,15 @@ footer a{color:var(--rosa)}
     <div class="hc"><span class="ano" id="hojeAno">hoje</span><b>Os maiores prêmios</b><p id="premiosTxt">Em breve: o ranking dos maiores prêmios já pagos pela Loteca.</p></div>
   </div>
 </section>
+<section class="w" id="mais">
+  <h2>Mais <i>bolões</i></h2>
+  <p class="sub">Mega-Sena, +Milionária, Quina e Mega da Virada também têm bolão.</p>
+  <div class="links">
+    <a class="lk" id="lk24" target="_blank" rel="noopener"><b>Loterias 24 Horas</b><span>Todos os bolões abertos, com o valor da cota e quantas restam.</span><em>loterias24horas.com.br ›</em></a>
+    <a class="lk" id="lkCx" target="_blank" rel="noopener"><b>Comprar na Caixa</b><span>Página oficial dos bolões da lotérica: Vilela &amp; Granhani Ltda Me, código 001926.</span><em>loteriasonline.caixa.gov.br ›</em></a>
+    <a class="lk" id="lkLo" target="_blank" rel="noopener"><b>Lotérica da Avenida</b><span>A lotérica parceira, em Pirassununga/SP. É lá que os bolões são registrados.</span><em>lotoavenida.com.br ›</em></a>
+  </div>
+</section>
 </main>
 
 <footer>
@@ -321,7 +364,7 @@ footer a{color:var(--rosa)}
     <div>
       <div><b>Bolão Loteca</b> · palpite da galera e bolão da semana</div>
       <div>Bolões registrados na Vilela &amp; Granhani Ltda Me (Lotérica da Avenida), Pirassununga/SP · código 001926</div>
-      <div><a href="https://loterias24horas.com.br/">Outros bolões: Loterias 24 Horas</a></div>
+      <div><a href="https://loterias24horas.com.br" target="_blank" rel="noopener">Loterias 24 Horas</a> · <a href="https://lotoavenida.com.br" target="_blank" rel="noopener">Lotérica da Avenida</a> · <a id="rdWa" rel="noopener">WhatsApp</a></div>
     </div>
     <div style="max-width:520px">
       <div><b>Proibido para menores de 18 anos. Jogue com responsabilidade.</b></div>
@@ -335,17 +378,52 @@ footer a{color:var(--rosa)}
 var CONFIG = {
   whatsapp: "5511914819638",
   linkCaixa: "https://www.loteriasonline.caixa.gov.br/silce-web/#/bolao-caixa/001926",
+  site24h: "https://loterias24horas.com.br",
+  loterica: "https://lotoavenida.com.br",
+  site: "https://bolaoloteca.com.br",
   api: ""   // URL do Apps Script (termina em /exec). Vazio = o palpite vai pelo WhatsApp
 };
 var LOTECA = {
   concurso: 1285,
-  premio: "",
-  especial: false,
-  fechamento: "",
-  bolao: null,
-  jogos: []
+  premio: "R$ 1 milhão",
+  especial: true,
+  fechamento: "2026-11-28T16:00:00-03:00",   // palpites fecham junto com as apostas na Caixa
+  bolao: null,                               // ex.: {formato:"4 triplos e 1 duplo", cotas:11, restam:8, valor:"R$ 39,76"}
+  // depois do jogo: r = "1", "X" ou "2" e placar: "2 x 1"
+  jogos: [
+    {casa:"Palmeiras", fora:"Estudiantes", quando:"Sáb 28/11 · final da Libertadores"},
+    {casa:"Real Madrid", fora:"Alavés", quando:"Sáb 28/11 · Espanhol"},
+    {casa:"Botafogo", fora:"Bahia", quando:"Sáb 28/11 · Brasileirão"},
+    {casa:"Everton", fora:"Liverpool", quando:"Dom 29/11 · Inglês"},
+    {casa:"Celta", fora:"Villarreal", quando:"Dom 29/11 · Espanhol"},
+    {casa:"Valencia", fora:"Osasuna", quando:"Dom 29/11 · Espanhol"},
+    {casa:"Coritiba", fora:"Flamengo", quando:"Dom 29/11 · Brasileirão"},
+    {casa:"Vitória", fora:"Santos", quando:"Dom 29/11 · Brasileirão"},
+    {casa:"Arsenal", fora:"Manchester City", quando:"Dom 29/11 · Inglês"},
+    {casa:"Corinthians", fora:"Grêmio", quando:"Dom 29/11 · Brasileirão"},
+    {casa:"Mirassol", fora:"Athletico-PR", quando:"Dom 29/11 · Brasileirão"},
+    {casa:"Internacional", fora:"Bragantino", quando:"Dom 29/11 · Brasileirão"},
+    {casa:"Atlético-MG", fora:"Vasco", quando:"Dom 29/11 · Brasileirão"},
+    {casa:"Real Sociedad", fora:"Sevilla", quando:"Dom 29/11 · Espanhol"}
+  ]
 };
 /* ====== FIM DA EDIÇÃO ====== */
+
+/* modo de teste: bolaoloteca.com.br/?teste=1 (aberto) ou ?teste=final (com resultado). Grava no concurso "TESTE" da planilha. */
+var TESTE = /[?&]teste=/.test(location.search), TESTE_FINAL = /[?&]teste=final/.test(location.search);
+if(TESTE){
+  LOTECA = { concurso:"TESTE", premio:"R$ 1 milhão (exemplo)", especial:false, fechamento:"2027-12-31T23:59:00-03:00",
+    bolao:{formato:"4 triplos e 1 duplo", cotas:11, restam:7, valor:"R$ 39,76"},
+    jogos: LOTECA.jogos.map(function(j,i){ var o={casa:j.casa, fora:j.fora, quando:j.quando};
+      if(TESTE_FINAL){ o.r="1X21X21X21X21X".charAt(i); o.placar = o.r==="1"?"2 x 1":o.r==="X"?"1 x 1":"0 x 2"; } return o; }) };
+  document.getElementById("faixaTeste").hidden=false;
+}
+function guarda(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+function pega(k){ try{ return localStorage.getItem(k)||""; }catch(e){ return ""; } }
+function fmtFone(x){ var d=String(x).replace(/\D/g,"").slice(0,11);
+  if(d.length>=10) return "("+d.slice(0,2)+") "+d.slice(2,d.length-4)+"-"+d.slice(-4); if(d.length>2) return "("+d.slice(0,2)+") "+d.slice(2); return d; }
+function mascara(e){ e.target.value=fmtFone(e.target.value); }
+function linkShare(txt){ return "https://wa.me/?text="+encodeURIComponent(txt+" "+CONFIG.site); }
 
 function el(t,c,x){var e=document.createElement(t); if(c)e.className=c; if(x!=null)e.textContent=x; return e;}
 function wa(m){return "https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(m);}
@@ -360,23 +438,26 @@ function menu(a){mn.classList.toggle("open",a); mb.setAttribute("aria-expanded",
 mb.addEventListener("click",function(){menu(!mn.classList.contains("open"));});
 mn.addEventListener("click",function(e){if(e.target.tagName==="A")menu(false);});
 
-document.getElementById("hEye").textContent = LOTECA.especial ? "Concurso especial" : "Loteca da semana";
+document.getElementById("hEye").textContent = LOTECA.especial ? "Loteca · concurso especial" : "Loteca da semana";
 document.getElementById("hConc").textContent = "Concurso " + LOTECA.concurso;
 document.getElementById("hPremio").textContent = LOTECA.premio ? "Prêmio estimado " + LOTECA.premio : "";
-document.getElementById("hSub").textContent = !TEM ? "A grade deste concurso sai em breve." : RES ? "Jogos encerrados. Veja o resultado e o ranking." : "14 jogos · acerte 13 ou 14 para ganhar";
+document.getElementById("hSub").textContent = !TEM ? "A grade deste concurso sai em breve." : RES ? "Jogos encerrados. Veja o resultado e o ranking." : LOTECA.especial ? "14 jogos · ganha quem acerta 14. Se ninguém fizer 14, o prêmio principal vai pra quem fez 13." : "14 jogos · acerte 13 ou 14 para ganhar";
 var cdEl=document.getElementById("hCd");
 function falta(ms){var m=Math.floor(ms/60000),d=Math.floor(m/1440),h=Math.floor(m%1440/60),mi=m%60;
   if(d>0)return d+(d>1?" dias, ":" dia, ")+h+"h e "+dd(mi)+"min"; if(h>0)return h+"h "+dd(mi)+"min"; return mi+" min";}
 function tique(){ if(!FECHA||!TEM||RES){cdEl.hidden=true;return;} var ms=FECHA-Date.now();
-  if(ms<=0){cdEl.hidden=false; cdEl.className="cd"; cdEl.textContent="Apostas e palpites encerrados"; travar(); return;}
-  cdEl.hidden=false; cdEl.className="cd"+(ms<3*3600e3?" urg":""); cdEl.textContent="⏰ Bolão e palpites fecham em "+falta(ms); }
+  if(ms<=0){cdEl.hidden=false; cdEl.className="cd"; cdEl.textContent="Palpites encerrados"; travar(); return;}
+  cdEl.hidden=false; cdEl.className="cd"+(ms<3*3600e3?" urg":""); cdEl.textContent="⏰ Palpites fecham em "+falta(ms); }
 
 (function(){
   var bx=document.getElementById("bolaoBox"), b=LOTECA.bolao;
   bx.appendChild(el("p","eye","Bolão da semana"));
   bx.appendChild(el("h2",null,"Bolão da Loteca "+LOTECA.concurso));
-  if(!b){ bx.appendChild(el("p",null,"O bolão desta semana abre assim que a grade sair. Chame no WhatsApp pra reservar sua cota."));
-    var a0=el("div","acts"), w0=el("a","btn w2","Reservar pelo WhatsApp"); w0.href=wa("Olá! Quero reservar uma cota do bolão da Loteca "+LOTECA.concurso+"."); a0.appendChild(w0); bx.appendChild(a0); return; }
+  if(!b){ bx.appendChild(el("p",null,"O bolão desta semana está sendo montado. Reserve sua cota pelo WhatsApp ou veja os bolões que já estão abertos na Caixa."));
+    var a0=el("div","acts"), w0=el("a","btn w2","Reservar pelo WhatsApp"); w0.href=wa("Olá! Quero reservar uma cota do bolão da Loteca "+LOTECA.concurso+"."); w0.rel="noopener";
+    var o0=el("a","btn o2","Ver bolões na Caixa"); o0.href=CONFIG.linkCaixa; o0.target="_blank"; o0.rel="noopener";
+    a0.appendChild(w0); a0.appendChild(o0); bx.appendChild(a0);
+    bx.appendChild(el("p","nota","Na Caixa, a lotérica aparece como Vilela & Granhani Ltda Me · código 001926.")); return; }
   var ul=el("ul","bl");
   function li(k,v){var l=el("li"); l.appendChild(el("span",null,k)); l.appendChild(el("b",null,v)); ul.appendChild(l);}
   li("Jogo", b.formato); li("Cotas", b.cotas + " cotas"); bx.appendChild(ul);
@@ -387,7 +468,7 @@ function tique(){ if(!FECHA||!TEM||RES){cdEl.hidden=true;return;} var ms=FECHA-D
   var w=el("a","btn w2","Reservar pelo WhatsApp"); w.href=wa("Olá! Quero reservar uma cota do bolão da Loteca "+LOTECA.concurso+" ("+b.formato+"), cota de "+b.valor+"."); w.rel="noopener";
   var o=el("a","btn o2","Comprar on-line"); o.href=CONFIG.linkCaixa; o.target="_blank"; o.rel="noopener";
   acts.appendChild(w); acts.appendChild(o); bx.appendChild(acts);
-  bx.appendChild(el("p","nota","Valor da cota no balcão. Na compra on-line, a Caixa cobra uma pequena tarifa. Na página da Caixa, procure a Loteca "+LOTECA.concurso+"."));
+  bx.appendChild(el("p","nota","Valor da cota no balcão. Na compra on-line, a Caixa cobra uma pequena tarifa. Na Caixa, a lotérica aparece como Vilela & Granhani Ltda Me (código 001926): procure a Loteca "+LOTECA.concurso+"."));
 })();
 
 var lg=document.getElementById("listaGrade");
@@ -405,10 +486,20 @@ J.forEach(function(j,i){ var l=linhaJogo(j,i), g=el("div","op3"); g.setAttribute
     lb.appendChild(r); lb.appendChild(s); g.appendChild(lb); });
   l.appendChild(g); lp.appendChild(l); });
 function palpite(){ var s=""; for(var i=0;i<14;i++){ var r=document.querySelector('input[name="j'+i+'"]:checked'); s+= r? r.value : "-"; } return s; }
-function conta(){ var p=palpite(), n=p.replace(/-/g,"").length; fConta.textContent=n+" de 14 jogos"; fEnv.disabled = !aberto() || n<14; }
+function conta(){ var p=palpite(), n=p.replace(/-/g,"").length; if(aberto()) guarda("bl_p_"+LOTECA.concurso,p); fConta.textContent=n+" de 14 jogos"; fEnv.disabled = !aberto() || n<14; }
 document.getElementById("fPal").addEventListener("change",conta);
 function travar(){ fEnv.disabled=true; Array.prototype.forEach.call(document.querySelectorAll("#fPal input"),function(x){x.disabled=true;}); fEnv.textContent = TEM ? "Palpites encerrados" : "Palpites abrem quando a grade sair"; }
+(function(){ // devolve o que a pessoa já tinha preenchido neste aparelho
+  document.getElementById("fNome").value=pega("bl_nome"); document.getElementById("fWa").value=fmtFone(pega("bl_wa")); document.getElementById("lWa").value=fmtFone(pega("bl_wa"));
+  var g=pega("bl_p_"+LOTECA.concurso); if(g.length===14) for(var i=0;i<14;i++){ var r=document.querySelector('input[name="j'+i+'"][value="'+g.charAt(i)+'"]'); if(r) r.checked=true; }
+  ["fWa","lWa"].forEach(function(id){ document.getElementById(id).addEventListener("input",mascara); });
+  if(!CONFIG.api) document.getElementById("cPin").hidden=true;
+  if(!TEM){ document.getElementById("fPal").hidden=true; document.getElementById("palVazio").hidden=false;
+    document.getElementById("palAvisa").href=wa("Olá! Me avisa quando abrirem os palpites da Loteca "+LOTECA.concurso+"."); }
+})();
 if(!aberto()) travar();
+function enviou(nome,fone,txt){ guarda("bl_nome",nome); guarda("bl_wa",fone); msg(txt,true); document.getElementById("lWa").value=fmtFone(fone);
+  var sh=document.getElementById("fShare"); sh.href=linkShare("Dei meu palpite na Loteca "+LOTECA.concurso+" no Bolão Loteca. Dá o seu também:"); sh.hidden=false; }
 function msg(t,ok){ fMsg.className="msg "+(ok?"ok":"er"); fMsg.textContent=t; }
 document.getElementById("fPal").addEventListener("submit",function(e){
   e.preventDefault(); if(!aberto()) return;
@@ -416,16 +507,16 @@ document.getElementById("fPal").addEventListener("submit",function(e){
   if(document.getElementById("fHp").value) return;
   if(nome.length<2) return msg("Escreva seu nome.",false);
   if(fone.length<10||fone.length>11) return msg("Confira o WhatsApp: DDD + número.",false);
-  if(!/^\d{4}$/.test(pin)) return msg("O PIN tem 4 números.",false);
+  if(CONFIG.api && !/^\d{4}$/.test(pin)) return msg("O PIN tem 4 números.",false);
   if(p.indexOf("-")>=0) return msg("Falta marcar algum jogo.",false);
   var dados={concurso:LOTECA.concurso, nome:nome, whats:fone, pin:pin, palpite:p, aceita:document.getElementById("fOpt").checked};
   if(!CONFIG.api){
     var txt="Meu palpite na Loteca "+LOTECA.concurso+" ("+nome+"):\n"+J.map(function(j,i){return (i+1)+". "+j.casa+" x "+j.fora+": "+p[i];}).join("\n");
-    window.open(wa(txt),"_blank","noopener"); msg("Abrimos o WhatsApp com o seu palpite. É só enviar!",true); return; }
+    window.open(wa(txt),"_blank","noopener"); enviou(nome,fone,"Abrimos o WhatsApp com o seu palpite. É só enviar!"); return; }
   fEnv.disabled=true; fEnv.textContent="Enviando…";
   fetch(CONFIG.api,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(dados)})
     .then(function(r){return r.json();})
-    .then(function(r){ if(r.ok){ msg(r.atualizado?"Palpite atualizado! Valeu, "+nome+".":"Palpite enviado! Boa sorte, "+nome+".",true); carregar(); }
+    .then(function(r){ if(r.ok){ enviou(nome,fone,r.atualizado?"Palpite atualizado! Valeu, "+nome+".":"Palpite enviado! Boa sorte, "+nome+"."); carregar(); }
       else msg(r.erro||"Não deu certo. Tente de novo.",false); })
     .catch(function(){ msg("Sem conexão. Tente de novo em instantes.",false); })
     .then(function(){ fEnv.textContent="Enviar meu palpite"; conta(); });
@@ -453,6 +544,7 @@ function desenhaPovo(L){
   var lv=document.getElementById("listaPovo"); lv.textContent="";
   document.getElementById("povoSub").textContent = L.length ? L.length+(L.length>1?" palpites":" palpite")+" até agora." : "Ainda não tem palpite. Seja o primeiro!";
   if(!TEM){ lv.appendChild(el("li","vazio","Aparece quando a grade sair.")); return; }
+  if(!L.length){ lv.appendChild(el("li","vazio", aberto() ? "Dê o primeiro palpite e veja aqui o que a galera acha de cada jogo." : "Ninguém palpitou neste concurso.")); return; }
   var maisDiv=null, maisDivV=1;
   J.forEach(function(j,i){ var c={"1":0,"X":0,"2":0}; L.forEach(function(x){ if(c[x.p[i]]!=null) c[x.p[i]]++; });
     var t=L.length, l=linhaJogo(j,i), b=el("div","barra");
@@ -473,11 +565,11 @@ function desenhaRanking(L){
          .sort(function(x,y){ return y.a-x.a || x.t-y.t; });
   sub.textContent = R.length ? "Concurso "+LOTECA.concurso+" · empate desempata por quem palpitou primeiro." : "Ninguém palpitou neste concurso.";
   R.slice(0,20).forEach(function(r,i){ var li=el("li"); li.appendChild(el("span","pos",(i+1)+"º"));
-    var nm=el("span","nm",r.n); if(r.a>=13) nm.appendChild(el("span","pr","Faria prêmio na Loteca!")); li.appendChild(nm);
+    var nm=el("span","nm",r.n||"Palpiteiro"); if(r.a>=13) nm.appendChild(el("span","pr","Faria prêmio na Loteca!")); li.appendChild(nm);
     li.appendChild(el("span","pt",r.a+(r.a===1?" acerto":" acertos"))); lr.appendChild(li); });
 }
 function carregar(){
-  if(!CONFIG.api){ desenhaPovo([]); desenhaRanking([]); if(TEM) document.getElementById("povoSub").textContent="Os palpites aparecem aqui assim que a planilha estiver ligada."; return; }
+  if(!CONFIG.api){ desenhaPovo([]); desenhaRanking([]); return; }
   fetch(CONFIG.api+"?c="+LOTECA.concurso).then(function(r){return r.json();})
     .then(function(r){ var L=(r&&r.palpites)||[]; desenhaPovo(L); desenhaRanking(L); })
     .catch(function(){ desenhaPovo([]); desenhaRanking([]); });
@@ -491,18 +583,23 @@ function mostraArea(d){
   document.getElementById("lNome").textContent=d.nome;
   document.getElementById("lResumo").textContent=d.total+(d.total===1?" palpite":" palpites")+" · "+d.acertos+" acertos no total";
   var H=document.getElementById("lHist"); H.textContent="";
-  (d.hist||[]).forEach(function(h){ var li=el("li"); li.appendChild(el("span",null,"Loteca "+h.c)); li.appendChild(el("b",null,h.a==null?"aguardando":h.a+" acertos"+(h.pos?" · "+h.pos+"º":""))); H.appendChild(li); });
+  (d.hist||[]).forEach(function(h){ var li=el("li"), e=el("span",null,"Loteca "+h.c); if(h.p) e.appendChild(el("small",null,h.p)); li.appendChild(e); li.appendChild(el("b",null,h.a==null?"aguardando":h.a+" acertos"+(h.pos?" · "+h.pos+"º":""))); H.appendChild(li); });
 }
+if(!CONFIG.api){ document.getElementById("fLogin").hidden=true; document.getElementById("lBreve").hidden=false; }
+document.getElementById("lSair").addEventListener("click",function(){ document.getElementById("lArea").hidden=true; document.getElementById("fLogin").hidden=false; document.getElementById("lPin").value=""; lMsg.className="msg"; });
+document.getElementById("povoShare").href=linkShare("Bora palpitar na Loteca "+LOTECA.concurso+"? 14 jogos, 1, X ou 2, e ranking da galera:");
 document.getElementById("fLogin").addEventListener("submit",function(e){
   e.preventDefault(); var fone=document.getElementById("lWa").value.replace(/\D/g,""), pin=document.getElementById("lPin").value;
   if(fone.length<10||fone.length>11) return lmsg("Confira o WhatsApp.",false);
   if(!/^\d{4}$/.test(pin)) return lmsg("O PIN tem 4 números.",false);
   if(!CONFIG.api) return lmsg("A Minha área abre quando a planilha estiver ligada.",false);
   fetch(CONFIG.api,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({acao:"login",whats:fone,pin:pin})})
-    .then(function(r){return r.json();}).then(function(r){ if(r.ok) mostraArea(r); else lmsg(r.erro||"WhatsApp ou PIN errado.",false); })
+    .then(function(r){return r.json();}).then(function(r){ if(r.ok){ guarda("bl_wa",fone); lMsg.className="msg"; mostraArea(r); } else lmsg(r.erro||"WhatsApp ou PIN errado.",false); })
     .catch(function(){ lmsg("Sem conexão. Tente de novo.",false); });
 });
 
+document.getElementById("lk24").href=CONFIG.site24h; document.getElementById("lkCx").href=CONFIG.linkCaixa; document.getElementById("lkLo").href=CONFIG.loterica;
+document.getElementById("rdWa").href=wa("Olá! Vim pelo site Bolão Loteca.");
 carregar(); tique(); setInterval(tique,30000); setInterval(function(){ if(aberto()) carregar(); },120000);
 </script>
 </body>

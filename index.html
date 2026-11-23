@@ -92,6 +92,8 @@ h2 i{color:var(--red);font-style:normal}
 .btn.p{background:var(--red);color:#fff;width:100%}
 .btn.p:disabled{background:#5a3a39;color:#c9b8b7;cursor:not-allowed}
 .btn.g{background:#fff;color:#121212;width:100%}
+.pz{list-style:none;margin:14px 0 0;padding:10px 12px;background:rgba(0,0,0,.18);border-radius:12px;font-size:16px;font-weight:600}
+.pz li{padding:2px 0}
 .nota{font-size:15px;color:#FFD9D6;margin:14px 0 0}
 
 .jogos{list-style:none;margin:0;padding:0}
@@ -415,7 +417,8 @@ var LOTECA = {
   concurso: 1285,
   premio: "R$ 1 milhão",
   especial: true,
-  fechamento: "2026-11-28T16:00:00-03:00",   // palpites fecham junto com as apostas na Caixa
+  fechamento: "2026-11-28T15:45:00-03:00",   // bolão on-line: até 15 min antes do encerramento da Caixa (16h)
+  prazos: ["Retirada na lotérica: até sábado 28/11, 12h", "Compra on-line: até sábado 28/11, 15h45"],
   bolao: {formato:"2 triplos + 4 duplos", cotas:12, restam:11, valor:"R$ 32,40"},   // null = "sendo montado"
   // b = palpite do bolão ("1", "1X", "1X2"...). Depois do jogo: r = "1", "X" ou "2" e placar: "2 x 1"
   jogos: [
@@ -477,8 +480,8 @@ var cdEl=document.getElementById("hCd");
 function falta(ms){var m=Math.floor(ms/60000),d=Math.floor(m/1440),h=Math.floor(m%1440/60),mi=m%60;
   if(d>0)return d+(d>1?" dias, ":" dia, ")+h+"h e "+dd(mi)+"min"; if(h>0)return h+"h "+dd(mi)+"min"; return mi+" min";}
 function tique(){ if(!FECHA||!TEM||RES){cdEl.hidden=true;return;} var ms=FECHA-Date.now();
-  if(ms<=0){cdEl.hidden=false; cdEl.className="cd"; cdEl.textContent=PALP?"Palpites encerrados":"Apostas encerradas"; travar(); return;}
-  cdEl.hidden=false; cdEl.className="cd"+(ms<3*3600e3?" urg":""); cdEl.textContent=(PALP?"⏰ Palpites fecham em ":"⏰ Apostas fecham em ")+falta(ms); }
+  if(ms<=0){cdEl.hidden=false; cdEl.className="cd"; cdEl.textContent=PALP?"Palpites encerrados":"Bolão encerrado"; travar(); return;}
+  cdEl.hidden=false; cdEl.className="cd"+(ms<3*3600e3?" urg":""); cdEl.textContent=(PALP?"⏰ Palpites fecham em ":"⏰ Bolão fecha em ")+falta(ms); }
 
 (function(){
   var bx=document.getElementById("bolaoBox"), b=LOTECA.bolao;
@@ -495,6 +498,7 @@ function tique(){ if(!FECHA||!TEM||RES){cdEl.hidden=true;return;} var ms=FECHA-D
   bx.appendChild(el("div",null,"Valor da cota"));
   bx.appendChild(el("div","cota",b.valor));
   if(b.restam!=null) bx.appendChild(el("div","rest", b.restam>0 ? "Restam "+b.restam+" de "+b.cotas+" cotas" : "Esgotado"));
+  if(LOTECA.prazos){ var pz=el("ul","pz"); LOTECA.prazos.forEach(function(t){ pz.appendChild(el("li",null,t)); }); bx.appendChild(pz); }
   var acts=el("div","acts");
   var w=el("a","btn w2","Reservar pelo WhatsApp"); w.href=wa("Olá! Quero reservar uma cota do bolão da Loteca "+LOTECA.concurso+" ("+b.formato+"), cota de "+b.valor+"."); w.rel="noopener";
   var o=el("a","btn o2","Comprar on-line"); o.href=CONFIG.linkCaixa; o.target="_blank"; o.rel="noopener";

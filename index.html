@@ -154,6 +154,11 @@ h2 i{color:var(--red);font-style:normal}
 .tag.zeb{color:var(--gold)}.tag.cav{color:#E9A66B}.tag.dono{color:var(--rosa)}.tag.bic{color:#F2A03D}
 .turma{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px}
 @media(min-width:720px){.turma{grid-template-columns:repeat(4,1fr)}}
+.vol{grid-column:2;display:flex;gap:6px;align-items:center;margin-top:6px;font-size:14px;color:var(--mut);font-weight:700}
+.vol i{font-style:normal;font-family:Oswald,sans-serif;font-size:18px;width:34px;height:30px;border-radius:8px;border:2px solid #444;color:#666;display:flex;align-items:center;justify-content:center}
+.vol i.on{background:var(--red);border-color:var(--red);color:#fff}
+.vol span{margin-right:4px}
+#listaGrade .tag{margin-top:6px}
 .tp{background:var(--bg3);border-radius:12px;padding:10px;display:flex;gap:10px;align-items:center;font-size:15px;line-height:1.25}
 .tp svg{width:48px;height:48px;flex:none}
 .tp b{display:block;font-family:Oswald,sans-serif;font-size:17px;text-transform:uppercase}
@@ -270,7 +275,7 @@ footer a{color:var(--rosa)}
 
 <section class="w" id="grade">
   <h2>Os <i>14</i> jogos</h2>
-  <p class="sub">1 = time da casa · X = empate · 2 = visitante. Vale o placar do tempo normal, sem prorrogação nem pênaltis.</p>
+  <p class="sub" id="gradeSub">1 = time da casa · X = empate · 2 = visitante. Vale o placar do tempo normal, sem prorrogação nem pênaltis.</p>
   <div class="box"><ol class="jogos" id="listaGrade"></ol></div>
 </section>
 
@@ -389,22 +394,22 @@ var LOTECA = {
   especial: true,
   fechamento: "2026-11-28T16:00:00-03:00",   // palpites fecham junto com as apostas na Caixa
   bolao: {formato:"2 triplos + 4 duplos", cotas:12, restam:11, valor:"R$ 32,40"},   // null = "sendo montado"
-  // depois do jogo: r = "1", "X" ou "2" e placar: "2 x 1"
+  // b = palpite do bolão ("1", "1X", "1X2"...). Depois do jogo: r = "1", "X" ou "2" e placar: "2 x 1"
   jogos: [
-    {casa:"Palmeiras", fora:"Estudiantes", quando:"Sáb 28/11 · final da Libertadores"},
-    {casa:"Real Madrid", fora:"Alavés", quando:"Sáb 28/11 · Espanhol"},
-    {casa:"Botafogo", fora:"Bahia", quando:"Sáb 28/11 · Brasileirão"},
-    {casa:"Everton", fora:"Liverpool", quando:"Dom 29/11 · Inglês"},
-    {casa:"Celta", fora:"Villarreal", quando:"Dom 29/11 · Espanhol"},
-    {casa:"Valencia", fora:"Osasuna", quando:"Dom 29/11 · Espanhol"},
-    {casa:"Coritiba", fora:"Flamengo", quando:"Dom 29/11 · Brasileirão"},
-    {casa:"Vitória", fora:"Santos", quando:"Dom 29/11 · Brasileirão"},
-    {casa:"Arsenal", fora:"Manchester City", quando:"Dom 29/11 · Inglês"},
-    {casa:"Corinthians", fora:"Grêmio", quando:"Dom 29/11 · Brasileirão"},
-    {casa:"Mirassol", fora:"Athletico-PR", quando:"Dom 29/11 · Brasileirão"},
-    {casa:"Internacional", fora:"Bragantino", quando:"Dom 29/11 · Brasileirão"},
-    {casa:"Atlético-MG", fora:"Vasco", quando:"Dom 29/11 · Brasileirão"},
-    {casa:"Real Sociedad", fora:"Sevilla", quando:"Dom 29/11 · Espanhol"}
+    {casa:"Palmeiras", fora:"Estudiantes", quando:"Sáb 28/11 · final da Libertadores", b:"1X"},
+    {casa:"Real Madrid", fora:"Alavés", quando:"Sáb 28/11 · Espanhol", b:"1"},
+    {casa:"Botafogo", fora:"Bahia", quando:"Sáb 28/11 · Brasileirão", b:"1"},
+    {casa:"Everton", fora:"Liverpool", quando:"Dom 29/11 · Inglês", b:"2"},
+    {casa:"Celta", fora:"Villarreal", quando:"Dom 29/11 · Espanhol", b:"1X2"},
+    {casa:"Valencia", fora:"Osasuna", quando:"Dom 29/11 · Espanhol", b:"1X"},
+    {casa:"Coritiba", fora:"Flamengo", quando:"Dom 29/11 · Brasileirão", b:"1X2"},
+    {casa:"Vitória", fora:"Santos", quando:"Dom 29/11 · Brasileirão", b:"X2"},
+    {casa:"Arsenal", fora:"Manchester City", quando:"Dom 29/11 · Inglês", b:"12"},
+    {casa:"Corinthians", fora:"Grêmio", quando:"Dom 29/11 · Brasileirão", b:"1"},
+    {casa:"Mirassol", fora:"Athletico-PR", quando:"Dom 29/11 · Brasileirão", b:"1"},
+    {casa:"Internacional", fora:"Bragantino", quando:"Dom 29/11 · Brasileirão", b:"1"},
+    {casa:"Atlético-MG", fora:"Vasco", quando:"Dom 29/11 · Brasileirão", b:"1"},
+    {casa:"Real Sociedad", fora:"Sevilla", quando:"Dom 29/11 · Espanhol", b:"1"}
   ]
 };
 /* ====== FIM DA EDIÇÃO ====== */
@@ -541,6 +546,22 @@ var TURMA={
 };
 function tagBicho(k,extra){ var d=el("div","tag "+k); d.innerHTML=BICHO[k]; var s=el("span",null,TURMA[k][0]); s.appendChild(el("small",null,extra||TURMA[k][1])); d.appendChild(s); return d; }
 (function(){ var T=document.getElementById("turma"); if(!T) return; ["zeb","cav","dono","bic"].forEach(function(k){ var d=el("div","tp"); d.innerHTML=BICHO[k]; var x=el("div"); x.appendChild(el("b",null,TURMA[k][0])); x.appendChild(document.createTextNode(TURMA[k][1])); d.appendChild(x); T.appendChild(d); }); })();
+
+(function(){ // palpite do bolão na grade, com o selo da turma
+  if(TESTE || !J.some(function(j){return j.b;})) return;
+  var li=document.querySelectorAll("#listaGrade > li");
+  J.forEach(function(j,i){ if(!j.b||!li[i]) return;
+    var v=el("div","vol"); v.appendChild(el("span",null,"Nosso palpite"));
+    ["1","X","2"].forEach(function(o){ v.appendChild(el("i", j.b.indexOf(o)>=0?"on":"", o)); });
+    v.setAttribute("aria-label","Palpite do bolão: "+j.b.split("").join(" e "));
+    li[i].appendChild(v);
+    var t = j.b.length===3 ? tagBicho("zeb","Jogo aberto. Fomos de triplo.")
+          : j.b==="1" ? tagBicho("dono","Confiamos no "+j.casa+" em casa.")
+          : j.b==="2" ? tagBicho("cav","O "+j.fora+" entra e leva.")
+          : j.b.indexOf("X")>=0 ? tagBicho("bic","Pode empatar. Fomos de duplo.") : null;
+    if(t) li[i].appendChild(t); });
+  document.getElementById("gradeSub").textContent="Em vermelho, o palpite do nosso bolão. 1 = casa · X = empate · 2 = visitante. Vale o placar do tempo normal, sem prorrogação nem pênaltis.";
+})();
 
 function pct(n,t){return t?Math.round(n*100/t):0;}
 function desenhaPovo(L){

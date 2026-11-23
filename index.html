@@ -123,6 +123,17 @@ h2 i{color:var(--red);font-style:normal}
 .barra .b1{background:var(--red)}.barra .bx{background:#6B6B6B}.barra .b2{background:#2E6BD6}
 .tag{grid-column:2;font-size:15px;font-weight:700;margin-top:4px}
 .tag.fav{color:var(--rosa)}.tag.div{color:var(--gold)}
+
+.tag{display:flex;align-items:center;gap:10px}
+.tag svg{width:44px;height:44px;flex:none}
+.tag span{display:block;line-height:1.25}
+.tag small{display:block;font-weight:600;color:var(--mut);font-size:14px}
+.tag.zeb{color:var(--gold)}.tag.cav{color:#E9A66B}.tag.dono{color:var(--rosa)}.tag.bic{color:#F2A03D}
+.turma{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px}
+@media(min-width:720px){.turma{grid-template-columns:repeat(4,1fr)}}
+.tp{background:var(--bg3);border-radius:12px;padding:10px;display:flex;gap:10px;align-items:center;font-size:15px;line-height:1.25}
+.tp svg{width:48px;height:48px;flex:none}
+.tp b{display:block;font-family:Oswald,sans-serif;font-size:17px;text-transform:uppercase}
 .leg{display:flex;flex-wrap:wrap;gap:14px;font-size:16px;margin:0 0 12px;color:var(--mut)}
 .leg i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:-2px}
 
@@ -259,6 +270,7 @@ footer a{color:var(--rosa)}
   <h2>Palpite do <i>povo</i></h2>
   <p class="sub" id="povoSub">O que a galera está marcando em cada jogo.</p>
   <div class="box povo">
+    <div class="turma" id="turma" aria-label="A turma do palpite do povo"></div>
     <div class="leg"><span><i style="background:#D5261F"></i>1 casa</span><span><i style="background:#6B6B6B"></i>X empate</span><span><i style="background:#2E6BD6"></i>2 fora</span></div>
     <ol class="jogos" id="listaPovo"></ol>
   </div>
@@ -420,6 +432,22 @@ document.getElementById("fPal").addEventListener("submit",function(e){
 });
 conta();
 
+
+var BICHO={
+ zeb:'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 14l-4-10 10 7zM44 14l4-10-10 7z" fill="#F6F2EC" stroke="#121212" stroke-width="3"/><ellipse cx="32" cy="30" rx="18" ry="17" fill="#F6F2EC" stroke="#121212" stroke-width="3"/><path d="M16 22l10-2 1 4-10 3zM48 22l-10-2-1 4 10 3z" fill="#121212"/><circle cx="26" cy="29" r="5" fill="#fff" stroke="#121212" stroke-width="2"/><circle cx="38" cy="29" r="5" fill="#fff" stroke="#121212" stroke-width="2"/><circle cx="27" cy="30" r="2.4" fill="#121212"/><circle cx="39" cy="30" r="2.4" fill="#121212"/><ellipse cx="32" cy="43" rx="12" ry="8" fill="#F6F2EC" stroke="#121212" stroke-width="3"/><path d="M25 43c4 4 10 4 14 0-2 6-12 6-14 0z" fill="#D5261F"/><path d="M24 12l3-8 3 7 3-8 3 8 3-7" fill="none" stroke="#121212" stroke-width="3"/></svg>',
+ cav:'<svg viewBox="0 0 64 64" aria-hidden="true"><rect x="12" y="30" width="34" height="16" rx="3" fill="#A86A36" stroke="#121212" stroke-width="3"/><path d="M14 36h30M14 41h30" stroke="#6B3F1D" stroke-width="2"/><path d="M40 32l4-18 12 4-2 8-6 2-2 8z" fill="#A86A36" stroke="#121212" stroke-width="3" stroke-linejoin="round"/><path d="M44 14l2-6 4 7" fill="#A86A36" stroke="#121212" stroke-width="3"/><circle cx="51" cy="20" r="2" fill="#121212"/><path d="M41 14c-2 4-2 10 0 14" stroke="#D5261F" stroke-width="3" fill="none"/><path d="M12 34l-6 4" stroke="#121212" stroke-width="3"/><rect x="16" y="46" width="4" height="6" fill="#121212"/><rect x="38" y="46" width="4" height="6" fill="#121212"/><path d="M8 54h48" stroke="#121212" stroke-width="3"/><circle cx="18" cy="55" r="4" fill="#F5C842" stroke="#121212" stroke-width="2.5"/><circle cx="40" cy="55" r="4" fill="#F5C842" stroke="#121212" stroke-width="2.5"/></svg>',
+ dono:'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 30L32 10l24 20v26H8z" fill="#D5261F" stroke="#121212" stroke-width="3" stroke-linejoin="round"/><ellipse cx="32" cy="40" rx="14" ry="13" fill="#C98A4B" stroke="#121212" stroke-width="3"/><path d="M18 34c-4 2-6 10-2 14l5-6zM46 34c4 2 6 10 2 14l-5-6z" fill="#7A4422" stroke="#121212" stroke-width="2.5"/><circle cx="27" cy="38" r="2.6" fill="#121212"/><circle cx="37" cy="38" r="2.6" fill="#121212"/><ellipse cx="32" cy="45" rx="4" ry="3" fill="#121212"/><path d="M26 50c4 3 8 3 12 0" stroke="#121212" stroke-width="2.5" fill="none"/><rect x="24" y="53" width="16" height="4" rx="2" fill="#F5C842" stroke="#121212" stroke-width="2"/></svg>',
+ bic:'<svg viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="14" cy="40" rx="10" ry="14" fill="#121212"/><ellipse cx="50" cy="40" rx="10" ry="14" fill="#121212"/><ellipse cx="16" cy="36" rx="5" ry="6" fill="#F6F2EC"/><ellipse cx="48" cy="36" rx="5" ry="6" fill="#F6F2EC"/><circle cx="17" cy="33" r="2.2" fill="#121212"/><circle cx="47" cy="33" r="2.2" fill="#121212"/><path d="M20 31c8-3 12 0 12 3-4 3-8 4-12 3z" fill="#F2A03D" stroke="#121212" stroke-width="2"/><path d="M44 31c-8-3-12 0-12 3 4 3 8 4 12 3z" fill="#F2A03D" stroke="#121212" stroke-width="2"/><path d="M30 34h4" stroke="#D5261F" stroke-width="3"/><path d="M27 22l2 4M32 20v5M37 22l-2 4" stroke="#F5C842" stroke-width="2.5" stroke-linecap="round"/></svg>'
+};
+var TURMA={
+ zeb:["Dona Zebra","Jogo dividido. Ali pode dar zebra."],
+ cav:["Cavalo de Troia","A galera acha que o visitante entra e leva."],
+ dono:["Dono da Casa","Em casa, a galera não vê outra."],
+ bic:["Dois Bicudos","Forças iguais. Cheiro de empate, com ou sem gol."]
+};
+function tagBicho(k,extra){ var d=el("div","tag "+k); d.innerHTML=BICHO[k]; var s=el("span",null,TURMA[k][0]); s.appendChild(el("small",null,extra||TURMA[k][1])); d.appendChild(s); return d; }
+(function(){ var T=document.getElementById("turma"); if(!T) return; ["zeb","cav","dono","bic"].forEach(function(k){ var d=el("div","tp"); d.innerHTML=BICHO[k]; var x=el("div"); x.appendChild(el("b",null,TURMA[k][0])); x.appendChild(document.createTextNode(TURMA[k][1])); d.appendChild(x); T.appendChild(d); }); })();
+
 function pct(n,t){return t?Math.round(n*100/t):0;}
 function desenhaPovo(L){
   var lv=document.getElementById("listaPovo"); lv.textContent="";
@@ -431,9 +459,10 @@ function desenhaPovo(L){
     b.setAttribute("aria-label","1: "+pct(c["1"],t)+"%, X: "+pct(c.X,t)+"%, 2: "+pct(c["2"],t)+"%");
     [["1","b1"],["X","bx"],["2","b2"]].forEach(function(k){ var v=pct(c[k[0]],t), s=el("i",k[1], v>=12? k[0]+" "+v+"%" : ""); s.style.width=(t?v:33.3)+"%"; b.appendChild(s); });
     l.appendChild(b);
-    if(t>=5){ var mx=Math.max(c["1"],c.X,c["2"])/t;
-      if(mx>=0.6) l.appendChild(el("div","tag fav","Favorito claro"));
-      else if(mx<0.45){ l.appendChild(el("div","tag div","Jogo dividido · pode dar zebra")); if(mx<maisDivV){maisDivV=mx;maisDiv=j;} } }
+    if(t>=5){ var top=["1","X","2"].reduce(function(a,b){return c[b]>c[a]?b:a;}), mx=c[top]/t;
+      if(top==="X" && mx>=0.4) l.appendChild(tagBicho("bic"));
+      else if(mx>=0.6) l.appendChild(top==="1" ? tagBicho("dono","Em casa, o "+j.casa+" é favorito da galera.") : tagBicho("cav","A galera acha que o "+j.fora+" ganha fora."));
+      else if(mx<0.45){ l.appendChild(tagBicho("zeb")); if(mx<maisDivV){maisDivV=mx;maisDiv=j;} } }
     lv.appendChild(l); });
   if(maisDiv) document.getElementById("balao").textContent="Fica de olho em "+maisDiv.casa+" x "+maisDiv.fora+". Ali pode dar zebra.";
 }

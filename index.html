@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bolão Loteca · palpite da galera e bolão da semana</title>
-<meta name="description" content="A Loteca da semana: grade dos 14 jogos, bolão, palpite da galera, palpite do povo, ranking e a história da Loteria Esportiva.">
-<meta property="og:title" content="Bolão Loteca · palpite da galera">
-<meta property="og:description" content="Dê seu 1, X ou 2 nos 14 jogos da semana e veja o que a galera está achando.">
+<title>Bolão Loteca · o bolão da Loteca da semana</title>
+<meta name="description" content="A Loteca da semana: os 14 jogos, o prêmio, o bolão com cota e a história da Loteria Esportiva.">
+<meta property="og:title" content="Bolão Loteca · o bolão da Loteca da semana">
+<meta property="og:description" content="Os 14 jogos da semana, o prêmio e o bolão com cota.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bolaoloteca.com.br/">
 <meta property="og:locale" content="pt_BR">
@@ -200,10 +200,10 @@ footer a{color:var(--rosa)}
     </button>
     <nav id="menu" aria-label="Navegação">
       <a href="#bolao">Bolão</a>
-      <a href="#palpite">Dar palpite</a>
-      <a href="#povo">Palpite do povo</a>
-      <a href="#ranking">Ranking</a>
-      <a href="#conta">Minha área</a>
+      <a data-palp href="#palpite">Dar palpite</a>
+      <a data-palp href="#povo">Palpite do povo</a>
+      <a data-palp href="#ranking">Ranking</a>
+      <a data-palp href="#conta">Minha área</a>
       <a href="#historia">História</a>
       <a href="#mais">Mais bolões</a>
     </nav>
@@ -258,7 +258,7 @@ footer a{color:var(--rosa)}
     </div>
     <div class="chips">
       <a class="chip r" href="#bolao">Ver o bolão</a>
-      <a class="chip" href="#palpite">Dar meu palpite</a>
+      <a data-palp class="chip" href="#palpite">Dar meu palpite</a>
     </div>
   </div>
 </div>
@@ -345,7 +345,6 @@ footer a{color:var(--rosa)}
     <div class="hc"><span class="ano">1972</span><b>O primeiro milionário</b><p>Uma zebra num Corinthians x Juventus, no Pacaembu, fez o primeiro milionário da modalidade: Eduardo Varela, o "Dudu da Loteca".</p></div>
     <div class="hc"><span class="ano">70–80</span><b>A zebrinha da TV</b><p>Por anos, o domingo à noite começava com os resultados da Loteria Esportiva na televisão, com uma zebrinha desenhada avisando as surpresas. Foi assim que "deu zebra" entrou na boca do povo.</p></div>
     <div class="hc"><span class="ano">2002</span><b>Vira Loteca</b><p>A Loteria Esportiva ganhou novo nome e novo formato. Hoje são 14 jogos, e ganha quem acerta 13 ou 14.</p></div>
-    <div class="hc"><span class="ano" id="hojeAno">hoje</span><b>Os maiores prêmios</b><p id="premiosTxt">Em breve: o ranking dos maiores prêmios já pagos pela Loteca.</p></div>
   </div>
 </section>
 <section class="w" id="mais">
@@ -362,13 +361,13 @@ footer a{color:var(--rosa)}
 <footer>
   <div class="w">
     <div>
-      <div><b>Bolão Loteca</b> · palpite da galera e bolão da semana</div>
+      <div><b>Bolão Loteca</b> · o bolão da Loteca da semana</div>
       <div>Bolões registrados na Vilela &amp; Granhani Ltda Me (Lotérica da Avenida), Pirassununga/SP · código 001926</div>
       <div><a href="https://loterias24horas.com.br" target="_blank" rel="noopener">Loterias 24 Horas</a> · <a href="https://lotoavenida.com.br" target="_blank" rel="noopener">Lotérica da Avenida</a> · <a id="rdWa" rel="noopener">WhatsApp</a></div>
     </div>
     <div style="max-width:520px">
       <div><b>Proibido para menores de 18 anos. Jogue com responsabilidade.</b></div>
-      <div>O palpite da galera é uma brincadeira gratuita e não é aposta nem dá direito a prêmio. Este site não é da Caixa; as compras on-line são feitas nos canais oficiais das Loterias Caixa.</div>
+      <div><span data-palp>O palpite da galera é uma brincadeira gratuita e não é aposta nem dá direito a prêmio. </span>Este site não é da Caixa; as compras on-line são feitas nos canais oficiais das Loterias Caixa.</div>
     </div>
   </div>
 </footer>
@@ -381,6 +380,7 @@ var CONFIG = {
   site24h: "https://loterias24horas.com.br",
   loterica: "https://lotoavenida.com.br",
   site: "https://bolaoloteca.com.br",
+  palpites: false,   // true liga de volta: palpite da galera, palpite do povo, ranking e Minha área
   api: ""   // URL do Apps Script (termina em /exec). Vazio = o palpite vai pelo WhatsApp
 };
 var LOTECA = {
@@ -418,6 +418,9 @@ if(TESTE){
       if(TESTE_FINAL){ o.r="1X21X21X21X21X".charAt(i); o.placar = o.r==="1"?"2 x 1":o.r==="X"?"1 x 1":"0 x 2"; } return o; }) };
   document.getElementById("faixaTeste").hidden=false;
 }
+var PALP = CONFIG.palpites || TESTE;   // no modo teste (?teste=1) os palpites continuam visíveis
+if(!PALP){ ["palpite","povo","ranking","conta"].forEach(function(id){ document.getElementById(id).hidden=true; });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-palp]"),function(x){ x.hidden=true; }); }
 function guarda(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
 function pega(k){ try{ return localStorage.getItem(k)||""; }catch(e){ return ""; } }
 function fmtFone(x){ var d=String(x).replace(/\D/g,"").slice(0,11);
@@ -446,8 +449,8 @@ var cdEl=document.getElementById("hCd");
 function falta(ms){var m=Math.floor(ms/60000),d=Math.floor(m/1440),h=Math.floor(m%1440/60),mi=m%60;
   if(d>0)return d+(d>1?" dias, ":" dia, ")+h+"h e "+dd(mi)+"min"; if(h>0)return h+"h "+dd(mi)+"min"; return mi+" min";}
 function tique(){ if(!FECHA||!TEM||RES){cdEl.hidden=true;return;} var ms=FECHA-Date.now();
-  if(ms<=0){cdEl.hidden=false; cdEl.className="cd"; cdEl.textContent="Palpites encerrados"; travar(); return;}
-  cdEl.hidden=false; cdEl.className="cd"+(ms<3*3600e3?" urg":""); cdEl.textContent="⏰ Palpites fecham em "+falta(ms); }
+  if(ms<=0){cdEl.hidden=false; cdEl.className="cd"; cdEl.textContent=PALP?"Palpites encerrados":"Apostas encerradas"; travar(); return;}
+  cdEl.hidden=false; cdEl.className="cd"+(ms<3*3600e3?" urg":""); cdEl.textContent=(PALP?"⏰ Palpites fecham em ":"⏰ Apostas fecham em ")+falta(ms); }
 
 (function(){
   var bx=document.getElementById("bolaoBox"), b=LOTECA.bolao;

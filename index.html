@@ -317,7 +317,7 @@ dialog.av::backdrop{background:rgba(0,0,0,.72)}
     <p class="eye" id="hEye">Loteca · concurso especial</p>
     <h1 id="hTit">Loteca <small id="hConc">Concurso 1285</small></h1>
     <div class="d hp" id="hPremio">Prêmio estimado R$ 1 milhão</div>
-    <p class="hs" id="hSub">14 jogos · ganha quem acerta 14. Se ninguém fizer 14, o prêmio principal vai pra quem fez 13.</p>
+    <p class="hs" id="hSub">Concurso especial: quem acerta os 14 jogos leva o prêmio. Se ninguém acertar os 14, o prêmio vai pra quem acertou 13.</p>
     <div class="cd" id="hCd" hidden></div>
     <div class="fala">
       <div class="balao" id="balao">Aqui o palpite é sério. Se der zebra, eu avisei.</div>
@@ -543,7 +543,7 @@ mn.addEventListener("click",function(e){if(e.target.tagName==="A")menu(false);})
 document.getElementById("hEye").textContent = LOTECA.especial ? "Loteca · concurso especial" : "Loteca da semana";
 document.getElementById("hConc").textContent = "Concurso " + LOTECA.concurso;
 document.getElementById("hPremio").textContent = LOTECA.premio ? "Prêmio estimado " + LOTECA.premio : "";
-document.getElementById("hSub").textContent = !TEM ? "A grade deste concurso sai em breve." : RES ? (PALP ? "Jogos encerrados. Veja o resultado e o ranking." : "Jogos encerrados. Veja a conferência do bolão.") : LOTECA.especial ? "14 jogos · ganha quem acerta 14. Se ninguém fizer 14, o prêmio principal vai pra quem fez 13." : "14 jogos · acerte 13 ou 14 para ganhar";
+document.getElementById("hSub").textContent = !TEM ? "A grade deste concurso sai em breve." : RES ? (PALP ? "Jogos encerrados. Veja o resultado e o ranking." : "Jogos encerrados. Veja a conferência do bolão.") : LOTECA.especial ? "Concurso especial: quem acerta os 14 jogos leva o prêmio. Se ninguém acertar os 14, o prêmio vai pra quem acertou 13." : "14 jogos · acerte 13 ou 14 para ganhar";
 var cdEl=document.getElementById("hCd");
 function falta(ms){var m=Math.floor(ms/60000),d=Math.floor(m/1440),h=Math.floor(m%1440/60),mi=m%60;
   if(d>0)return d+(d>1?" dias, ":" dia, ")+h+"h e "+dd(mi)+"min"; if(h>0)return h+"h "+dd(mi)+"min"; return mi+" min";}

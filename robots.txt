@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /fonte/
 
 Sitemap: https://bolaoloteca.com.br/sitemap.xml

@@ -1,0 +1,102 @@
+{
+  "concurso": 1285,
+  "premio": "R$ 1 milhão",
+  "especial": true,
+  "fechamento": "2026-11-28T15:45:00-03:00",
+  "prazos": [
+    "Retirada na lotérica: até sábado 28/11, 12h",
+    "Compra on-line: até sábado 28/11, 15h45"
+  ],
+  "bolao": {
+    "formato": "2 triplos + 4 duplos",
+    "cotas": 12,
+    "restam": 7,
+    "valor": "R$ 32,40"
+  },
+  "jogos": [
+    {
+      "casa": "Palmeiras",
+      "fora": "Estudiantes",
+      "quando": "Sáb 28/11 · final da Libertadores",
+      "b": "1X"
+    },
+    {
+      "casa": "Real Madrid",
+      "fora": "Alavés",
+      "quando": "Sáb 28/11 · Espanhol",
+      "b": "1"
+    },
+    {
+      "casa": "Botafogo",
+      "fora": "Bahia",
+      "quando": "Sáb 28/11 · Brasileirão",
+      "b": "1"
+    },
+    {
+      "casa": "Everton",
+      "fora": "Liverpool",
+      "quando": "Dom 29/11 · Inglês",
+      "b": "2"
+    },
+    {
+      "casa": "Celta",
+      "fora": "Villarreal",
+      "quando": "Dom 29/11 · Espanhol",
+      "b": "1X2"
+    },
+    {
+      "casa": "Valencia",
+      "fora": "Osasuna",
+      "quando": "Dom 29/11 · Espanhol",
+      "b": "1"
+    },
+    {
+      "casa": "Coritiba",
+      "fora": "Flamengo",
+      "quando": "Dom 29/11 · Brasileirão",
+      "b": "X2"
+    },
+    {
+      "casa": "Vitória",
+      "fora": "Santos",
+      "quando": "Dom 29/11 · Brasileirão",
+      "b": "X2"
+    },
+    {
+      "casa": "Arsenal",
+      "fora": "Manchester City",
+      "quando": "Dom 29/11 · Inglês",
+      "b": "12"
+    },
+    {
+      "casa": "Corinthians",
+      "fora": "Grêmio",
+      "quando": "Dom 29/11 · Brasileirão",
+      "b": "1"
+    },
+    {
+      "casa": "Mirassol",
+      "fora": "Athletico-PR",
+      "quando": "Dom 29/11 · Brasileirão",
+      "b": "1X2"
+    },
+    {
+      "casa": "Internacional",
+      "fora": "Bragantino",
+      "quando": "Dom 29/11 · Brasileirão",
+      "b": "1"
+    },
+    {
+      "casa": "Atlético-MG",
+      "fora": "Vasco",
+      "quando": "Dom 29/11 · Brasileirão",
+      "b": "1"
+    },
+    {
+      "casa": "Real Sociedad",
+      "fora": "Sevilla",
+      "quando": "Dom 29/11 · Espanhol",
+      "b": "1"
+    }
+  ]
+}

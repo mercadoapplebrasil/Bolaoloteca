@@ -14,14 +14,19 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://bolaoloteca.com.br/">
 <meta name="theme-color" content="#121212">
-<link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3">
-<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/manifest.webmanifest">
 <meta name="apple-mobile-web-app-title" content="Bolão Loteca">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/oswald-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Bolão Loteca","alternateName":"Bolão da Loteria Esportiva","url":"https://bolaoloteca.com.br/","inLanguage":"pt-BR"}</script>
 <style>
+@font-face{font-family:Oswald;font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/oswald-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Oswald;font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/oswald-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Inter;font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Inter;font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Inter;font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/inter-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 :root{--bg:#121212;--bg2:#1C1C1C;--bg3:#262626;--line:#333;--red:#D5261F;--red2:#A3000F;--rosa:#F2B8B5;--tx:#F6F2EC;--mut:#B8B2A8;--gold:#F5C842}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -208,6 +213,79 @@ footer{background:#0A0A0A;color:var(--mut);margin-top:56px;font-size:16px;border
 footer .w{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;padding:32px 18px}
 footer b{color:var(--tx)}
 footer a{color:var(--rosa)}
+.rest .ult{display:inline-block;margin-left:8px;background:#fff;color:var(--red2);font-size:13px;font-weight:800;padding:2px 9px;border-radius:99px;text-transform:uppercase;letter-spacing:.04em;vertical-align:2px}
+.barra2{height:9px;background:rgba(0,0,0,.25);border-radius:99px;margin-top:8px;overflow:hidden}
+.barra2 i{display:block;height:100%;background:var(--gold);border-radius:99px}
+.btn.s2{background:rgba(0,0,0,.2);color:#fff;gap:10px;font-size:17px;min-height:52px}
+.btn.s2 svg{width:20px;height:20px;flex:none}
+.fim{margin:16px 0 0;padding:12px 14px;background:rgba(0,0,0,.22);border-radius:12px;font-weight:700}
+.conf{display:flex;align-items:center;gap:14px;background:var(--bg2);border:2px solid var(--line);border-radius:16px;padding:14px 16px;margin:0 0 16px}
+.conf b{font-family:Oswald,Impact,sans-serif;font-size:34px;line-height:1;color:var(--gold);white-space:nowrap}
+.conf span{font-size:17px;font-weight:600;line-height:1.35}
+.conf.prem{border-color:var(--gold);background:#2A2410}
+.vol i.res{box-shadow:0 0 0 3px var(--gold)}
+.vol{flex-wrap:wrap}.vol span{white-space:nowrap}
+.vol b{margin-left:6px;font-size:14px;white-space:nowrap}
+.vol b.ok{color:#5BD48A}.vol b.er{color:var(--mut)}
+dialog.av{border:1px solid var(--line);border-radius:18px;padding:0;width:min(440px,calc(100vw - 28px));background:var(--bg2);color:var(--tx);box-shadow:0 24px 60px rgba(0,0,0,.6)}
+dialog.av::backdrop{background:rgba(0,0,0,.72)}
+.av .in{padding:24px 20px 18px}
+.av h2{margin:0 0 6px;font-size:26px}
+.av p{margin:0 0 14px;font-size:17px;color:var(--mut)}
+.av .alvo{background:#2A1414;border:2px dashed var(--red);border-radius:12px;padding:14px 16px;margin:0 0 16px}
+.av .alvo b{display:block;font-size:21px;line-height:1.25;color:#fff}
+.av .alvo span{display:block;font-size:17px;margin-top:2px}
+.av .alvo small{display:block;font-size:14px;color:var(--mut);margin-top:6px}
+.av .acts2{display:grid;gap:8px}
+.av button.fx{background:none;border:0;font:inherit;font-size:16px;font-weight:700;color:var(--mut);min-height:44px;cursor:pointer;text-decoration:underline}
+.av p.cod{margin:12px 0 0;font-size:14px;text-align:center}
+.av a.avz{display:block;text-align:center;font-size:15px;color:var(--rosa);font-weight:700;margin-top:6px}
+
+.zebra{background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;font:inherit;color:inherit}
+@media(max-width:719px){.zebra{position:relative;width:124px}}
+@media(min-width:720px){.dz-som{top:10%;right:14%}}
+.zebra svg{overflow:visible}
+.dz-som{position:absolute;top:-4px;right:-4px;width:34px;height:34px;border-radius:50%;background:#fff;border:3px solid var(--red);display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1;animation:dz-chama 1.6s ease-in-out infinite alternate}
+@keyframes dz-chama{from{transform:scale(1)}to{transform:scale(1.12)}}
+.dz-cab{transform-origin:156px 168px;animation:dz-balanca 3.2s ease-in-out infinite alternate}
+.dz-olhos{transform-origin:161px 104px;animation:dz-pisca 4.6s linear infinite}
+.dz-od{transform-origin:202px 62px;animation:dz-orelha 5.5s linear infinite}
+.dz-oe{transform-origin:118px 62px}
+.dz-bola{transform-box:fill-box;transform-origin:50% 50%}
+.dz-pata{transform-origin:118px 226px}
+.dz-boca{transform-origin:162px 148px}
+@keyframes dz-balanca{from{transform:rotate(-2deg)}to{transform:rotate(2deg)}}
+@keyframes dz-pisca{0%,93%,97%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+@keyframes dz-orelha{0%,88%,97%,100%{transform:rotate(0)}91%{transform:rotate(14deg)}94%{transform:rotate(-5deg)}}
+.balao.pop{animation:dz-pop .45s cubic-bezier(.2,.9,.3,1.4)}
+@keyframes dz-pop{0%{transform:scale(.6)}100%{transform:scale(1)}}
+
+@keyframes dz-bola{0.00%{transform:translateY(0px) rotate(0deg)}2.17%{transform:translateY(0px) rotate(0deg);animation-timing-function:cubic-bezier(.2,.75,.45,1)}6.96%{transform:translateY(-46px) rotate(60deg);animation-timing-function:cubic-bezier(.55,0,.85,.35)}11.96%{transform:translateY(0px) rotate(120deg);animation-timing-function:cubic-bezier(.2,.75,.45,1)}16.74%{transform:translateY(-46px) rotate(180deg);animation-timing-function:cubic-bezier(.55,0,.85,.35)}21.74%{transform:translateY(0px) rotate(240deg);animation-timing-function:cubic-bezier(.2,.75,.45,1)}26.09%{transform:translateY(-46px) rotate(300deg);animation-timing-function:cubic-bezier(.55,0,.85,.35)}30.43%{transform:translateY(0px) rotate(360deg);animation-timing-function:cubic-bezier(.2,.75,.45,1)}38.04%{transform:translateY(-118px) rotate(540deg);animation-timing-function:cubic-bezier(.55,0,.85,.35)}45.65%{transform:translateY(0px) rotate(720deg);animation-timing-function:cubic-bezier(.2,.75,.45,1)}48.91%{transform:translateY(-16px) rotate(750deg);animation-timing-function:cubic-bezier(.55,0,.85,.35)}52.17%{transform:translateY(0px) rotate(770deg)}100.00%{transform:translateY(0px) rotate(770deg)}}
+@keyframes dz-pata{0.00%{transform:rotate(0deg)}0.87%{transform:rotate(0deg)}2.17%{transform:rotate(-9deg)}5.22%{transform:rotate(0deg)}10.65%{transform:rotate(0deg)}11.96%{transform:rotate(-9deg)}15.00%{transform:rotate(0deg)}20.43%{transform:rotate(0deg)}21.74%{transform:rotate(-9deg)}24.78%{transform:rotate(0deg)}29.13%{transform:rotate(0deg)}30.43%{transform:rotate(-16deg)}33.48%{transform:rotate(0deg)}100.00%{transform:rotate(0deg)}}
+@keyframes dz-pup{0.00%{transform:translate(0px,0px)}1.74%{transform:translate(-4px,5px)}30.43%{transform:translate(-4px,5px)}33.70%{transform:translate(-3px,-6px)}39.13%{transform:translate(-3px,-6px)}45.65%{transform:translate(-4px,5px)}50.00%{transform:translate(0px,0px)}100.00%{transform:translate(0px,0px)}}
+@keyframes dz-olhos{0.00%{transform:scale(1)}32.61%{transform:scale(1)}35.22%{transform:scale(1.16)}68.48%{transform:scale(1.16)}71.74%{transform:scale(1)}100.00%{transform:scale(1)}}
+@keyframes dz-sob{0.00%{transform:translate(0px,0px)}32.61%{transform:translate(0px,0px)}35.22%{transform:translate(0px,-8px)}68.48%{transform:translate(0px,-8px)}71.74%{transform:translate(0px,0px)}100.00%{transform:translate(0px,0px)}}
+@keyframes dz-cab{0.00%{transform:rotate(0deg)}2.17%{transform:rotate(2deg)}6.52%{transform:rotate(-1deg)}11.96%{transform:rotate(2deg)}16.30%{transform:rotate(-1deg)}21.74%{transform:rotate(2deg)}26.09%{transform:rotate(-1deg)}30.43%{transform:rotate(3deg)}35.87%{transform:rotate(-3deg)}38.48%{transform:rotate(6deg)}41.09%{transform:rotate(-6deg)}43.70%{transform:rotate(6deg)}46.30%{transform:rotate(-6deg)}48.91%{transform:rotate(6deg)}51.52%{transform:rotate(-6deg)}54.13%{transform:rotate(6deg)}56.74%{transform:rotate(-6deg)}59.35%{transform:rotate(6deg)}61.96%{transform:rotate(-6deg)}64.57%{transform:rotate(6deg)}66.30%{transform:rotate(0deg)}70.65%{transform:rotate(5deg)}75.00%{transform:rotate(-1deg)}79.35%{transform:rotate(0deg)}100.00%{transform:rotate(0deg)}}
+@keyframes dz-boca{0.00%{transform:scaleY(1)}34.78%{transform:scaleY(1)}36.96%{transform:scaleY(1.7)}39.57%{transform:scaleY(1.25)}42.17%{transform:scaleY(1.7)}44.78%{transform:scaleY(1.25)}47.39%{transform:scaleY(1.7)}50.00%{transform:scaleY(1.25)}52.61%{transform:scaleY(1.7)}55.22%{transform:scaleY(1.25)}57.83%{transform:scaleY(1.7)}60.43%{transform:scaleY(1.25)}63.04%{transform:scaleY(1.7)}65.65%{transform:scaleY(1.25)}66.30%{transform:scaleY(1)}100.00%{transform:scaleY(1)}}
+@keyframes dz-dz-oe{0.00%{transform:rotate(0deg)}35.87%{transform:rotate(0deg)}38.48%{transform:rotate(-12deg)}41.09%{transform:rotate(4deg)}43.70%{transform:rotate(-12deg)}46.30%{transform:rotate(4deg)}48.91%{transform:rotate(-12deg)}51.52%{transform:rotate(4deg)}54.13%{transform:rotate(-12deg)}56.74%{transform:rotate(4deg)}59.35%{transform:rotate(-12deg)}61.96%{transform:rotate(4deg)}64.57%{transform:rotate(-12deg)}66.30%{transform:rotate(0deg)}100.00%{transform:rotate(0deg)}}
+@keyframes dz-dz-od{0.00%{transform:rotate(0deg)}35.87%{transform:rotate(0deg)}38.48%{transform:rotate(12deg)}41.09%{transform:rotate(-4deg)}43.70%{transform:rotate(12deg)}46.30%{transform:rotate(-4deg)}48.91%{transform:rotate(12deg)}51.52%{transform:rotate(-4deg)}54.13%{transform:rotate(12deg)}56.74%{transform:rotate(-4deg)}59.35%{transform:rotate(12deg)}61.96%{transform:rotate(-4deg)}64.57%{transform:rotate(12deg)}66.30%{transform:rotate(0deg)}100.00%{transform:rotate(0deg)}}
+.dz.show .dz-bola{animation:dz-bola 4.6s linear both}
+.dz.show .dz-pata{animation:dz-pata 4.6s linear both}
+.dz.show .dz-pup{animation:dz-pup 4.6s linear both}
+.dz.show .dz-olhos{animation:dz-olhos 4.6s linear both}
+.dz.show .dz-sob{animation:dz-sob 4.6s linear both}
+.dz.show .dz-cab{animation:dz-cab 4.6s linear both}
+.dz.show .dz-boca{animation:dz-boca 4.6s linear both}
+.dz.show .dz-oe{animation:dz-dz-oe 4.6s linear both}
+.dz.show .dz-od{animation:dz-dz-od 4.6s linear both}
+@media (prefers-reduced-motion:reduce){.dz-som,.dz-cab,.dz-olhos,.dz-od,.balao.pop{animation:none}}
+.vit{display:grid;gap:10px;margin:0 0 18px}
+.vt{margin:0;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rosa)}
+.vi{display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:baseline;background:var(--bg2);border:1px solid var(--line);border-left:6px solid var(--c,#D5261F);border-radius:14px;padding:12px 14px;text-decoration:none;color:var(--tx)}
+.vi:hover{border-color:var(--rosa)}
+.vn{font-weight:700;font-size:18px;line-height:1.25}
+.vp{font-family:Oswald,Impact,sans-serif;font-size:20px;color:var(--gold);text-align:right;white-space:nowrap}
+.vd{grid-column:1/-1;font-size:15px;color:var(--mut)}
 </style>
 </head>
 <body>
@@ -223,10 +301,10 @@ footer a{color:var(--rosa)}
     </button>
     <nav id="menu" aria-label="Navegação">
       <a href="#bolao">Bolão</a>
-      <a data-palp href="#palpite">Dar palpite</a>
-      <a data-palp href="#povo">Palpite do povo</a>
-      <a data-palp href="#ranking">Ranking</a>
-      <a data-palp href="#conta">Minha área</a>
+      <a data-palp hidden href="#palpite">Dar palpite</a>
+      <a data-palp hidden href="#povo">Palpite do povo</a>
+      <a data-palp hidden href="#ranking">Ranking</a>
+      <a data-palp hidden href="#conta">Minha área</a>
       <a href="#historia">História</a>
       <a href="#mais">Mais bolões</a>
     </nav>
@@ -234,70 +312,68 @@ footer a{color:var(--rosa)}
 </header>
 
 <div class="teste" id="faixaTeste" hidden>MODO TESTE · dados de exemplo, nada aqui vale</div>
-<noscript><p style="padding:18px">Ative o JavaScript do navegador para ver a grade e dar seu palpite.</p></noscript>
 <div class="hero">
   <div class="w">
-    <p class="eye" id="hEye">Loteca da semana</p>
-    <h1 id="hTit">Loteca <small id="hConc"></small></h1>
-    <div class="d hp" id="hPremio"></div>
-    <p class="hs" id="hSub"></p>
+    <p class="eye" id="hEye">Loteca · concurso especial</p>
+    <h1 id="hTit">Loteca <small id="hConc">Concurso 1285</small></h1>
+    <div class="d hp" id="hPremio">Prêmio estimado R$ 1 milhão</div>
+    <p class="hs" id="hSub">14 jogos · ganha quem acerta 14. Se ninguém fizer 14, o prêmio principal vai pra quem fez 13.</p>
     <div class="cd" id="hCd" hidden></div>
     <div class="fala">
       <div class="balao" id="balao">Aqui o palpite é sério. Se der zebra, eu avisei.</div>
-      <div class="zebra"><svg viewBox="0 0 300 320" role="img" aria-label="Dona Zebra, a mascote, com uma bola de futebol" xmlns="http://www.w3.org/2000/svg">
+      <button class="zebra" id="dz" type="button" aria-label="Dona Zebra: toque para ouvir"><svg class="dz" viewBox="0 0 300 320" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <clipPath id="zc"><path d="M150 150c-18 0-30 14-32 40l-4 130h74l-6-130c-2-26-14-40-32-40z"/></clipPath>
         <clipPath id="zh"><ellipse cx="160" cy="110" rx="66" ry="60"/></clipPath>
       </defs>
-      <!-- pescoço -->
       <path d="M150 150c-18 0-30 14-32 40l-4 130h74l-6-130c-2-26-14-40-32-40z" fill="#F6F2EC" stroke="#121212" stroke-width="6"/>
       <g clip-path="url(#zc)" fill="#121212"><path d="M100 196h100l-6 16H106z M102 230h100l-6 16H108z M104 264h100l-6 16H110z M106 298h100l-6 22H112z"/></g>
-      <!-- crina -->
+      <g class="dz-cab">
       <path d="M118 70l-14-30 24 18 2-32 14 26 10-30 8 30 12-24-2 34 18-14-10 30z" fill="#121212"/>
-      <!-- cabeça -->
       <ellipse cx="160" cy="110" rx="66" ry="60" fill="#F6F2EC" stroke="#121212" stroke-width="6"/>
       <g clip-path="url(#zh)" fill="#121212"><path d="M90 60l44-6 2 12-44 8z M96 86l36-8 3 10-36 10z M220 72l-30 10 6 10 28-12z M224 100l-26 6 4 10 24-8z"/></g>
-      <!-- orelhas -->
-      <path d="M118 62l-20-40 36 24z M202 62l20-40-36 24z" fill="#F6F2EC" stroke="#121212" stroke-width="6" stroke-linejoin="round"/>
-      <path d="M116 56l-10-20 18 12z M204 56l10-20-18 12z" fill="#D5261F"/>
-      <!-- olhos -->
+      <g class="dz-oe"><path d="M118 62l-20-40 36 24z" fill="#F6F2EC" stroke="#121212" stroke-width="6" stroke-linejoin="round"/><path d="M116 56l-10-20 18 12z" fill="#D5261F"/></g>
+      <g class="dz-od"><path d="M202 62l20-40-36 24z" fill="#F6F2EC" stroke="#121212" stroke-width="6" stroke-linejoin="round"/><path d="M204 56l10-20-18 12z" fill="#D5261F"/></g>
+      <g class="dz-olhos">
       <ellipse cx="138" cy="104" rx="18" ry="21" fill="#fff" stroke="#121212" stroke-width="5"/>
       <ellipse cx="184" cy="104" rx="18" ry="21" fill="#fff" stroke="#121212" stroke-width="5"/>
-      <circle cx="142" cy="108" r="8" fill="#121212"/><circle cx="188" cy="108" r="8" fill="#121212"/>
-      <circle cx="145" cy="104" r="3" fill="#fff"/><circle cx="191" cy="104" r="3" fill="#fff"/>
-      <path d="M118 80c8-8 20-10 30-6 M172 74c10-4 22-2 30 6" fill="none" stroke="#121212" stroke-width="5" stroke-linecap="round"/>
-      <!-- focinho -->
+      <g class="dz-pup"><circle cx="142" cy="108" r="8" fill="#121212"/><circle cx="188" cy="108" r="8" fill="#121212"/>
+      <circle cx="145" cy="104" r="3" fill="#fff"/><circle cx="191" cy="104" r="3" fill="#fff"/></g>
+      </g>
+      <path class="dz-sob" d="M118 80c8-8 20-10 30-6 M172 74c10-4 22-2 30 6" fill="none" stroke="#121212" stroke-width="5" stroke-linecap="round"/>
       <ellipse cx="162" cy="150" rx="44" ry="26" fill="#F6F2EC" stroke="#121212" stroke-width="6"/>
-      <path d="M130 148c16 16 48 16 64 0-8 24-56 24-64 0z" fill="#D5261F" stroke="#121212" stroke-width="4"/>
+      <path class="dz-boca" d="M130 148c16 16 48 16 64 0-8 24-56 24-64 0z" fill="#D5261F" stroke="#121212" stroke-width="4"/>
       <circle cx="144" cy="138" r="5" fill="#121212"/><circle cx="180" cy="138" r="5" fill="#121212"/>
-      <!-- pata segurando a bola -->
-      <path d="M118 214c-26-2-48 4-62 18 14 10 36 12 60 6z" fill="#F6F2EC" stroke="#121212" stroke-width="6"/>
-      <!-- bola -->
+      </g>
+      <path class="dz-pata" d="M118 214c-26-2-48 4-62 18 14 10 36 12 60 6z" fill="#F6F2EC" stroke="#121212" stroke-width="6"/>
+      <g class="dz-bola">
       <circle cx="54" cy="262" r="44" fill="#fff" stroke="#121212" stroke-width="6"/>
       <path d="M54 232l17 12-6 20H43l-6-20z" fill="#121212"/>
       <path d="M71 244l19-6 7 18-12 12-8-4z M37 244l-19-6-7 18 12 12 8-4z M48 264l-9 16 9 16h12l9-16-9-16z" fill="#121212"/>
       <path d="M54 232l-1-14 M71 244l17-12 M37 244l-17-12 M78 268l15 8 M30 268l-15 8" stroke="#121212" stroke-width="4" stroke-linecap="round"/>
-    </svg></div>
+      </g>
+    </svg><span class="dz-som" aria-hidden="true">🔊</span></button>
     </div>
     <div class="chips">
       <a class="chip r" href="#bolao">Ver o bolão</a>
-      <a data-palp class="chip" href="#palpite">Dar meu palpite</a>
+      <a data-palp hidden class="chip" href="#palpite">Dar meu palpite</a>
     </div>
   </div>
 </div>
 
 <main>
 <section class="w" id="bolao">
-  <div class="bolao" id="bolaoBox"></div>
+  <div class="bolao" id="bolaoBox"><p class="eye">Bolão da semana</p><h2>Bolão da Loteca 1285</h2><ul class="bl"><li><span>Jogo</span><b>2 triplos + 4 duplos</b></li><li><span>Cotas</span><b>12 cotas</b></li></ul><div>Valor da cota</div><div class="cota">R$ 32,40</div><div class="rest">Restam 7 de 12 cotas</div><div class="barra2" aria-hidden="true"><i style="width: 42%;"></i></div><ul class="pz"><li>Retirada na lotérica: até sábado 28/11, 12h</li><li>Compra on-line: até sábado 28/11, 15h45</li></ul><div class="acts"><a class="btn w2" href="https://wa.me/5511914819638?text=Ol%C3%A1!%20Quero%20reservar%20uma%20cota%20do%20bol%C3%A3o%20da%20Loteca%201285%20(2%20triplos%20%2B%204%20duplos)%2C%20cota%20de%20R%24%2032%2C40." rel="noopener">Reservar pelo WhatsApp</a><a class="btn o2" href="https://www.loteriasonline.caixa.gov.br/silce-web/#/bolao-caixa/001926" target="_blank" rel="noopener" data-cx="">Comprar on-line</a><button class="btn s2" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M7 8l5-5 5 5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Mandar pros amigos</button></div><p class="nota">Valor da cota no balcão. Na compra on-line, a Caixa cobra uma pequena tarifa. Na Caixa, a lotérica aparece como Vilela &amp; Granhani Ltda Me (código 001926): procure a Loteca 1285.</p></div>
 </section>
 
 <section class="w" id="grade">
   <h2>Os <i>14</i> jogos</h2>
-  <p class="sub" id="gradeSub">1 = time da casa · X = empate · 2 = visitante. Vale o placar do tempo normal, sem prorrogação nem pênaltis.</p>
-  <div class="box"><ol class="jogos" id="listaGrade"></ol></div>
+  <div class="conf" id="conf" hidden=""></div>
+  <p class="sub" id="gradeSub">Em vermelho, o palpite do nosso bolão. 1 = casa · X = empate · 2 = visitante. Vale o placar do tempo normal, sem prorrogação nem pênaltis.</p>
+  <div class="box"><ol class="jogos" id="listaGrade"><li class="jg"><span class="jn">1</span><div class="jt">Palmeiras<span class="x">x</span>Estudiantes</div><div class="jq">Sáb 28/11 · final da Libertadores</div><div class="vol" aria-label="Palpite do bolão: 1 e X"><span>Nosso palpite</span><i class="on">1</i><i class="on">X</i><i>2</i></div><div class="tag bic"><svg viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="14" cy="40" rx="10" ry="14" fill="#121212"></ellipse><ellipse cx="50" cy="40" rx="10" ry="14" fill="#121212"></ellipse><ellipse cx="16" cy="36" rx="5" ry="6" fill="#F6F2EC"></ellipse><ellipse cx="48" cy="36" rx="5" ry="6" fill="#F6F2EC"></ellipse><circle cx="17" cy="33" r="2.2" fill="#121212"></circle><circle cx="47" cy="33" r="2.2" fill="#121212"></circle><path d="M20 31c8-3 12 0 12 3-4 3-8 4-12 3z" fill="#F2A03D" stroke="#121212" stroke-width="2"></path><path d="M44 31c-8-3-12 0-12 3 4 3 8 4 12 3z" fill="#F2A03D" stroke="#121212" stroke-width="2"></path><path d="M30 34h4" stroke="#D5261F" stroke-width="3"></path><path d="M27 22l2 4M32 20v5M37 22l-2 4" stroke="#F5C842" stroke-width="2.5" stroke-linecap="round"></path></svg><span>Dois Bicudos<small>Pode empatar. Fomos de duplo.</small></span></div></li><li class="jg"><span class="jn">2</span><div class="jt">Real Madrid<span class="x">x</span>Alavés</div><div class="jq">Sáb 28/11 · Espanhol</div><div class="vol" aria-label="Palpite do bolão: 1"><span>Nosso palpite</span><i class="on">1</i><i>X</i><i>2</i></div><div class="tag dono"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 30L32 10l24 20v26H8z" fill="#D5261F" stroke="#121212" stroke-width="3" stroke-linejoin="round"></path><ellipse cx="32" cy="40" rx="14" ry="13" fill="#C98A4B" stroke="#121212" stroke-width="3"></ellipse><path d="M18 34c-4 2-6 10-2 14l5-6zM46 34c4 2 6 10 2 14l-5-6z" fill="#7A4422" stroke="#121212" stroke-width="2.5"></path><circle cx="27" cy="38" r="2.6" fill="#121212"></circle><circle cx="37" cy="38" r="2.6" fill="#121212"></circle><ellipse cx="32" cy="45" rx="4" ry="3" fill="#121212"></ellipse><path d="M26 50c4 3 8 3 12 0" stroke="#121212" stroke-width="2.5" fill="none"></path><rect x="24" y="53" width="16" height="4" rx="2" fill="#F5C842" stroke="#121212" stroke-width="2"></rect></svg><span>Dono da Casa<small>Confiamos no Real Madrid em casa.</small></span></div></li><li class="jg"><span class="jn">3</span><div class="jt">Botafogo<span class="x">x</span>Bahia</div><div class="jq">Sáb 28/11 · Brasileirão</div><div class="vol" aria-label="Palpite do bolão: 1"><span>Nosso palpite</span><i class="on">1</i><i>X</i><i>2</i></div><div class="tag dono"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 30L32 10l24 20v26H8z" fill="#D5261F" stroke="#121212" stroke-width="3" stroke-linejoin="round"></path><ellipse cx="32" cy="40" rx="14" ry="13" fill="#C98A4B" stroke="#121212" stroke-width="3"></ellipse><path d="M18 34c-4 2-6 10-2 14l5-6zM46 34c4 2 6 10 2 14l-5-6z" fill="#7A4422" stroke="#121212" stroke-width="2.5"></path><circle cx="27" cy="38" r="2.6" fill="#121212"></circle><circle cx="37" cy="38" r="2.6" fill="#121212"></circle><ellipse cx="32" cy="45" rx="4" ry="3" fill="#121212"></ellipse><path d="M26 50c4 3 8 3 12 0" stroke="#121212" stroke-width="2.5" fill="none"></path><rect x="24" y="53" width="16" height="4" rx="2" fill="#F5C842" stroke="#121212" stroke-width="2"></rect></svg><span>Dono da Casa<small>Confiamos no Botafogo em casa.</small></span></div></li><li class="jg"><span class="jn">4</span><div class="jt">Everton<span class="x">x</span>Liverpool</div><div class="jq">Dom 29/11 · Inglês</div><div class="vol" aria-label="Palpite do bolão: 2"><span>Nosso palpite</span><i>1</i><i>X</i><i class="on">2</i></div><div class="tag cav"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="12" y="30" width="34" height="16" rx="3" fill="#A86A36" stroke="#121212" stroke-width="3"></rect><path d="M14 36h30M14 41h30" stroke="#6B3F1D" stroke-width="2"></path><path d="M40 32l4-18 12 4-2 8-6 2-2 8z" fill="#A86A36" stroke="#121212" stroke-width="3" stroke-linejoin="round"></path><path d="M44 14l2-6 4 7" fill="#A86A36" stroke="#121212" stroke-width="3"></path><circle cx="51" cy="20" r="2" fill="#121212"></circle><path d="M41 14c-2 4-2 10 0 14" stroke="#D5261F" stroke-width="3" fill="none"></path><path d="M12 34l-6 4" stroke="#121212" stroke-width="3"></path><rect x="16" y="46" width="4" height="6" fill="#121212"></rect><rect x="38" y="46" width="4" height="6" fill="#121212"></rect><path d="M8 54h48" stroke="#121212" stroke-width="3"></path><circle cx="18" cy="55" r="4" fill="#F5C842" stroke="#121212" stroke-width="2.5"></circle><circle cx="40" cy="55" r="4" fill="#F5C842" stroke="#121212" stroke-width="2.5"></circle></svg><span>Cavalo de Troia<small>O Liverpool entra e leva.</small></span></div></li><li class="jg"><span class="jn">5</span><div class="jt">Celta<span class="x">x</span>Villarreal</div><div class="jq">Dom 29/11 · Espanhol</div><div class="vol" aria-label="Palpite do bolão: 1 e X e 2"><span>Nosso palpite</span><i class="on">1</i><i class="on">X</i><i class="on">2</i></div><div class="tag zeb"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 14l-4-10 10 7zM44 14l4-10-10 7z" fill="#F6F2EC" stroke="#121212" stroke-width="3"></path><ellipse cx="32" cy="30" rx="18" ry="17" fill="#F6F2EC" stroke="#121212" stroke-width="3"></ellipse><path d="M16 22l10-2 1 4-10 3zM48 22l-10-2-1 4 10 3z" fill="#121212"></path><circle cx="26" cy="29" r="5" fill="#fff" stroke="#121212" stroke-width="2"></circle><circle cx="38" cy="29" r="5" fill="#fff" stroke="#121212" stroke-width="2"></circle><circle cx="27" cy="30" r="2.4" fill="#121212"></circle><circle cx="39" cy="30" r="2.4" fill="#121212"></circle><ellipse cx="32" cy="43" rx="12" ry="8" fill="#F6F2EC" stroke="#121212" stroke-width="3"></ellipse><path d="M25 43c4 4 10 4 14 0-2 6-12 6-14 0z" fill="#D5261F"></path><path d="M24 12l3-8 3 7 3-8 3 8 3-7" fill="none" stroke="#121212" stroke-width="3"></path></svg><span>Dona Zebra<small>Jogo aberto. Fomos de triplo.</small></span></div></li><li class="jg"><span class="jn">6</span><div class="jt">Valencia<span class="x">x</span>Osasuna</div><div class="jq">Dom 29/11 · Espanhol</div><div class="vol" aria-label="Palpite do bolão: 1"><span>Nosso palpite</span><i class="on">1</i><i>X</i><i>2</i></div><div class="tag dono"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 30L32 10l24 20v26H8z" fill="#D5261F" stroke="#121212" stroke-width="3" stroke-linejoin="round"></path><ellipse cx="32" cy="40" rx="14" ry="13" fill="#C98A4B" stroke="#121212" stroke-width="3"></ellipse><path d="M18 34c-4 2-6 10-2 14l5-6zM46 34c4 2 6 10 2 14l-5-6z" fill="#7A4422" stroke="#121212" stroke-width="2.5"></path><circle cx="27" cy="38" r="2.6" fill="#121212"></circle><circle cx="37" cy="38" r="2.6" fill="#121212"></circle><ellipse cx="32" cy="45" rx="4" ry="3" fill="#121212"></ellipse><path d="M26 50c4 3 8 3 12 0" stroke="#121212" stroke-width="2.5" fill="none"></path><rect x="24" y="53" width="16" height="4" rx="2" fill="#F5C842" stroke="#121212" stroke-width="2"></rect></svg><span>Dono da Casa<small>Confiamos no Valencia em casa.</small></span></div></li><li class="jg"><span class="jn">7</span><div class="jt">Coritiba<span class="x">x</span>Flamengo</div><div class="jq">Dom 29/11 · Brasileirão</div><div class="vol" aria-label="Palpite do bolão: X e 2"><span>Nosso palpite</span><i>1</i><i class="on">X</i><i class="on">2</i></div><div class="tag bic"><svg viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="14" cy="40" rx="10" ry="14" fill="#121212"></ellipse><ellipse cx="50" cy="40" rx="10" ry="14" fill="#121212"></ellipse><ellipse cx="16" cy="36" rx="5" ry="6" fill="#F6F2EC"></ellipse><ellipse cx="48" cy="36" rx="5" ry="6" fill="#F6F2EC"></ellipse><circle cx="17" cy="33" r="2.2" fill="#121212"></circle><circle cx="47" cy="33" r="2.2" fill="#121212"></circle><path d="M20 31c8-3 12 0 12 3-4 3-8 4-12 3z" fill="#F2A03D" stroke="#121212" stroke-width="2"></path><path d="M44 31c-8-3-12 0-12 3 4 3 8 4 12 3z" fill="#F2A03D" stroke="#121212" stroke-width="2"></path><path d="M30 34h4" stroke="#D5261F" stroke-width="3"></path><path d="M27 22l2 4M32 20v5M37 22l-2 4" stroke="#F5C842" stroke-width="2.5" stroke-linecap="round"></path></svg><span>Dois Bicudos<small>Pode empatar. Fomos de duplo.</small></span></div></li><li class="jg"><span class="jn">8</span><div class="jt">Vitória<span class="x">x</span>Santos</div><div class="jq">Dom 29/11 · Brasileirão</div><div class="vol" aria-label="Palpite do bolão: X e 2"><span>Nosso palpite</span><i>1</i><i class="on">X</i><i class="on">2</i></div><div class="tag bic"><svg viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="14" cy="40" rx="10" ry="14" fill="#121212"></ellipse><ellipse cx="50" cy="40" rx="10" ry="14" fill="#121212"></ellipse><ellipse cx="16" cy="36" rx="5" ry="6" fill="#F6F2EC"></ellipse><ellipse cx="48" cy="36" rx="5" ry="6" fill="#F6F2EC"></ellipse><circle cx="17" cy="33" r="2.2" fill="#121212"></circle><circle cx="47" cy="33" r="2.2" fill="#121212"></circle><path d="M20 31c8-3 12 0 12 3-4 3-8 4-12 3z" fill="#F2A03D" stroke="#121212" stroke-width="2"></path><path d="M44 31c-8-3-12 0-12 3 4 3 8 4 12 3z" fill="#F2A03D" stroke="#121212" stroke-width="2"></path><path d="M30 34h4" stroke="#D5261F" stroke-width="3"></path><path d="M27 22l2 4M32 20v5M37 22l-2 4" stroke="#F5C842" stroke-width="2.5" stroke-linecap="round"></path></svg><span>Dois Bicudos<small>Pode empatar. Fomos de duplo.</small></span></div></li><li class="jg"><span class="jn">9</span><div class="jt">Arsenal<span class="x">x</span>Manchester City</div><div class="jq">Dom 29/11 · Inglês</div><div class="vol" aria-label="Palpite do bolão: 1 e 2"><span>Nosso palpite</span><i class="on">1</i><i>X</i><i class="on">2</i></div></li><li class="jg"><span class="jn">10</span><div class="jt">Corinthians<span class="x">x</span>Grêmio</div><div class="jq">Dom 29/11 · Brasileirão</div><div class="vol" aria-label="Palpite do bolão: 1"><span>Nosso palpite</span><i class="on">1</i><i>X</i><i>2</i></div><div class="tag dono"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 30L32 10l24 20v26H8z" fill="#D5261F" stroke="#121212" stroke-width="3" stroke-linejoin="round"></path><ellipse cx="32" cy="40" rx="14" ry="13" fill="#C98A4B" stroke="#121212" stroke-width="3"></ellipse><path d="M18 34c-4 2-6 10-2 14l5-6zM46 34c4 2 6 10 2 14l-5-6z" fill="#7A4422" stroke="#121212" stroke-width="2.5"></path><circle cx="27" cy="38" r="2.6" fill="#121212"></circle><circle cx="37" cy="38" r="2.6" fill="#121212"></circle><ellipse cx="32" cy="45" rx="4" ry="3" fill="#121212"></ellipse><path d="M26 50c4 3 8 3 12 0" stroke="#121212" stroke-width="2.5" fill="none"></path><rect x="24" y="53" width="16" height="4" rx="2" fill="#F5C842" stroke="#121212" stroke-width="2"></rect></svg><span>Dono da Casa<small>Confiamos no Corinthians em casa.</small></span></div></li><li class="jg"><span class="jn">11</span><div class="jt">Mirassol<span class="x">x</span>Athletico-PR</div><div class="jq">Dom 29/11 · Brasileirão</div><div class="vol" aria-label="Palpite do bolão: 1 e X e 2"><span>Nosso palpite</span><i class="on">1</i><i class="on">X</i><i class="on">2</i></div><div class="tag zeb"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 14l-4-10 10 7zM44 14l4-10-10 7z" fill="#F6F2EC" stroke="#121212" stroke-width="3"></path><ellipse cx="32" cy="30" rx="18" ry="17" fill="#F6F2EC" stroke="#121212" stroke-width="3"></ellipse><path d="M16 22l10-2 1 4-10 3zM48 22l-10-2-1 4 10 3z" fill="#121212"></path><circle cx="26" cy="29" r="5" fill="#fff" stroke="#121212" stroke-width="2"></circle><circle cx="38" cy="29" r="5" fill="#fff" stroke="#121212" stroke-width="2"></circle><circle cx="27" cy="30" r="2.4" fill="#121212"></circle><circle cx="39" cy="30" r="2.4" fill="#121212"></circle><ellipse cx="32" cy="43" rx="12" ry="8" fill="#F6F2EC" stroke="#121212" stroke-width="3"></ellipse><path d="M25 43c4 4 10 4 14 0-2 6-12 6-14 0z" fill="#D5261F"></path><path d="M24 12l3-8 3 7 3-8 3 8 3-7" fill="none" stroke="#121212" stroke-width="3"></path></svg><span>Dona Zebra<small>Jogo aberto. Fomos de triplo.</small></span></div></li><li class="jg"><span class="jn">12</span><div class="jt">Internacional<span class="x">x</span>Bragantino</div><div class="jq">Dom 29/11 · Brasileirão</div><div class="vol" aria-label="Palpite do bolão: 1"><span>Nosso palpite</span><i class="on">1</i><i>X</i><i>2</i></div><div class="tag dono"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 30L32 10l24 20v26H8z" fill="#D5261F" stroke="#121212" stroke-width="3" stroke-linejoin="round"></path><ellipse cx="32" cy="40" rx="14" ry="13" fill="#C98A4B" stroke="#121212" stroke-width="3"></ellipse><path d="M18 34c-4 2-6 10-2 14l5-6zM46 34c4 2 6 10 2 14l-5-6z" fill="#7A4422" stroke="#121212" stroke-width="2.5"></path><circle cx="27" cy="38" r="2.6" fill="#121212"></circle><circle cx="37" cy="38" r="2.6" fill="#121212"></circle><ellipse cx="32" cy="45" rx="4" ry="3" fill="#121212"></ellipse><path d="M26 50c4 3 8 3 12 0" stroke="#121212" stroke-width="2.5" fill="none"></path><rect x="24" y="53" width="16" height="4" rx="2" fill="#F5C842" stroke="#121212" stroke-width="2"></rect></svg><span>Dono da Casa<small>Confiamos no Internacional em casa.</small></span></div></li><li class="jg"><span class="jn">13</span><div class="jt">Atlético-MG<span class="x">x</span>Vasco</div><div class="jq">Dom 29/11 · Brasileirão</div><div class="vol" aria-label="Palpite do bolão: 1"><span>Nosso palpite</span><i class="on">1</i><i>X</i><i>2</i></div><div class="tag dono"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 30L32 10l24 20v26H8z" fill="#D5261F" stroke="#121212" stroke-width="3" stroke-linejoin="round"></path><ellipse cx="32" cy="40" rx="14" ry="13" fill="#C98A4B" stroke="#121212" stroke-width="3"></ellipse><path d="M18 34c-4 2-6 10-2 14l5-6zM46 34c4 2 6 10 2 14l-5-6z" fill="#7A4422" stroke="#121212" stroke-width="2.5"></path><circle cx="27" cy="38" r="2.6" fill="#121212"></circle><circle cx="37" cy="38" r="2.6" fill="#121212"></circle><ellipse cx="32" cy="45" rx="4" ry="3" fill="#121212"></ellipse><path d="M26 50c4 3 8 3 12 0" stroke="#121212" stroke-width="2.5" fill="none"></path><rect x="24" y="53" width="16" height="4" rx="2" fill="#F5C842" stroke="#121212" stroke-width="2"></rect></svg><span>Dono da Casa<small>Confiamos no Atlético-MG em casa.</small></span></div></li><li class="jg"><span class="jn">14</span><div class="jt">Real Sociedad<span class="x">x</span>Sevilla</div><div class="jq">Dom 29/11 · Espanhol</div><div class="vol" aria-label="Palpite do bolão: 1"><span>Nosso palpite</span><i class="on">1</i><i>X</i><i>2</i></div><div class="tag dono"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 30L32 10l24 20v26H8z" fill="#D5261F" stroke="#121212" stroke-width="3" stroke-linejoin="round"></path><ellipse cx="32" cy="40" rx="14" ry="13" fill="#C98A4B" stroke="#121212" stroke-width="3"></ellipse><path d="M18 34c-4 2-6 10-2 14l5-6zM46 34c4 2 6 10 2 14l-5-6z" fill="#7A4422" stroke="#121212" stroke-width="2.5"></path><circle cx="27" cy="38" r="2.6" fill="#121212"></circle><circle cx="37" cy="38" r="2.6" fill="#121212"></circle><ellipse cx="32" cy="45" rx="4" ry="3" fill="#121212"></ellipse><path d="M26 50c4 3 8 3 12 0" stroke="#121212" stroke-width="2.5" fill="none"></path><rect x="24" y="53" width="16" height="4" rx="2" fill="#F5C842" stroke="#121212" stroke-width="2"></rect></svg><span>Dono da Casa<small>Confiamos no Real Sociedad em casa.</small></span></div></li></ol></div>
 </section>
 
-<section class="w" id="palpite">
+<section class="w" id="palpite" hidden>
   <h2>Palpite da <i>galera</i></h2>
   <p class="sub">Dê seu 1, X ou 2 nos 14 jogos. Quem acertar mais sobe no ranking.</p>
   <div class="aviso"><b>É brincadeira, não é aposta.</b>O palpite não vale prêmio nem concorre na Loteca. Pra concorrer de verdade, compre uma cota do bolão.</div>
@@ -319,7 +395,7 @@ footer a{color:var(--rosa)}
   </form>
 </section>
 
-<section class="w" id="povo">
+<section class="w" id="povo" hidden>
   <h2>Palpite do <i>povo</i></h2>
   <p class="sub" id="povoSub">O que a galera está marcando em cada jogo.</p>
   <div class="box povo">
@@ -330,13 +406,13 @@ footer a{color:var(--rosa)}
   </div>
 </section>
 
-<section class="w" id="ranking">
+<section class="w" id="ranking" hidden>
   <h2>Ranking dos <i>palpiteiros</i></h2>
   <p class="sub" id="rkSub">Sai depois dos jogos.</p>
   <div class="box"><ol class="rk" id="listaRk"></ol></div>
 </section>
 
-<section class="w conta" id="conta">
+<section class="w conta" id="conta" hidden>
   <h2>Minha <i>área</i></h2>
   <p class="sub">Entre com seu WhatsApp e o PIN que você criou no palpite.</p>
   <div class="box">
@@ -374,19 +450,33 @@ footer a{color:var(--rosa)}
 <section class="w" id="mais">
   <h2>Mais <i>bolões</i></h2>
   <p class="sub">Mega-Sena, +Milionária, Quina e Mega da Virada também têm bolão.</p>
+  <div class="vit" id="vit" hidden></div>
   <div class="links">
     <a class="lk" id="lk24" target="_blank" rel="noopener"><b>Loterias 24 Horas</b><span>Todos os bolões abertos, com o valor da cota e quantas restam.</span><em>loterias24horas.com.br ›</em></a>
     <a class="lk" id="lkCx" target="_blank" rel="noopener"><b>Comprar na Caixa</b><span>Página oficial dos bolões da lotérica: Vilela &amp; Granhani Ltda Me, código 001926.</span><em>loteriasonline.caixa.gov.br ›</em></a>
     <a class="lk" id="lkLo" target="_blank" rel="noopener"><b>Lotérica da Avenida</b><span>A lotérica parceira, em Pirassununga/SP. É lá que os bolões são registrados.</span><em>lotoavenida.com.br ›</em></a>
   </div>
   <a class="lk ind" href="https://torcedorpremiado.com.br/i/ZMM72ERQ" target="_blank" rel="sponsored noopener">
-    <img src="torcedor-premiado.jpg" width="84" height="84" alt="Logo do Torcedor Premiado" loading="lazy">
+    <img src="/torcedor-premiado.jpg" width="84" height="84" alt="Logo do Torcedor Premiado" loading="lazy">
     <div><i>Indicação</i><b>Torcedor Premiado</b><span>Clube de sorteios por assinatura, de outra empresa: iPhone, prêmios em dinheiro e carro, com apuração pelos resultados da Loteria Federal.</span><em>Conhecer ›</em></div>
     <span class="av">Link de indicação: a gente ganha uma comissão se você assinar. Assinatura recorrente, pode cancelar quando quiser. Só para maiores de 18. Promoção da Torcedor Premiado Clube Ltda., Certificados de Autorização SPA/MF nº 04.051941/2026 e nº 04.051576/2026. Consulte os regulamentos no site deles.</span>
   </a>
 </section>
 </main>
 
+<dialog class="av" id="aviso" aria-labelledby="avT">
+  <div class="in">
+    <h2 id="avT">Antes de ir para a Caixa</h2>
+    <p>O link abre a página da lotérica com todos os bolões. Procure este:</p>
+    <div class="alvo"><b id="avA"></b><span id="avB"></span><small id="avC"></small></div>
+    <div class="acts2">
+      <a class="btn p" id="avIr" href="https://www.loteriasonline.caixa.gov.br/silce-web/#/bolao-caixa/001926" target="_blank" rel="noopener">Ir para a Caixa</a>
+      <button class="fx" type="button" id="avX">Voltar</button>
+    </div>
+    <p class="cod">Na Caixa, a lotérica aparece como <b>Vilela &amp; Granhani Ltda Me</b> · código <b>001926</b></p>
+    <a class="avz" id="avZ" href="https://wa.me/5511914819638" target="_blank" rel="noopener">Não achou? Chame no WhatsApp</a>
+  </div>
+</dialog>
 <div class="fixa" id="fixa" hidden><div><b id="fxV"></b><span id="fxR"></span></div><a class="btn p" id="fxB" rel="noopener">Reservar cota</a></div>
 <footer>
   <div class="w">
@@ -397,11 +487,12 @@ footer a{color:var(--rosa)}
     </div>
     <div style="max-width:520px">
       <div><b>Proibido para menores de 18 anos. Jogue com responsabilidade.</b></div>
-      <div><span data-palp>O palpite da galera é uma brincadeira gratuita e não é aposta nem dá direito a prêmio. </span>Este site não é da Caixa; as compras on-line são feitas nos canais oficiais das Loterias Caixa.</div>
+      <div><span data-palp hidden>O palpite da galera é uma brincadeira gratuita e não é aposta nem dá direito a prêmio. </span>Este site não é da Caixa; as compras on-line são feitas nos canais oficiais das Loterias Caixa.</div>
     </div>
   </div>
 </footer>
 
+<script type="application/json" id="dados">{"concurso": 1285, "premio": "R$ 1 milhão", "especial": true, "fechamento": "2026-11-28T15:45:00-03:00", "prazos": ["Retirada na lotérica: até sábado 28/11, 12h", "Compra on-line: até sábado 28/11, 15h45"], "bolao": {"formato": "2 triplos + 4 duplos", "cotas": 12, "restam": 7, "valor": "R$ 32,40"}, "jogos": [{"casa": "Palmeiras", "fora": "Estudiantes", "quando": "Sáb 28/11 · final da Libertadores", "b": "1X"}, {"casa": "Real Madrid", "fora": "Alavés", "quando": "Sáb 28/11 · Espanhol", "b": "1"}, {"casa": "Botafogo", "fora": "Bahia", "quando": "Sáb 28/11 · Brasileirão", "b": "1"}, {"casa": "Everton", "fora": "Liverpool", "quando": "Dom 29/11 · Inglês", "b": "2"}, {"casa": "Celta", "fora": "Villarreal", "quando": "Dom 29/11 · Espanhol", "b": "1X2"}, {"casa": "Valencia", "fora": "Osasuna", "quando": "Dom 29/11 · Espanhol", "b": "1"}, {"casa": "Coritiba", "fora": "Flamengo", "quando": "Dom 29/11 · Brasileirão", "b": "X2"}, {"casa": "Vitória", "fora": "Santos", "quando": "Dom 29/11 · Brasileirão", "b": "X2"}, {"casa": "Arsenal", "fora": "Manchester City", "quando": "Dom 29/11 · Inglês", "b": "12"}, {"casa": "Corinthians", "fora": "Grêmio", "quando": "Dom 29/11 · Brasileirão", "b": "1"}, {"casa": "Mirassol", "fora": "Athletico-PR", "quando": "Dom 29/11 · Brasileirão", "b": "1X2"}, {"casa": "Internacional", "fora": "Bragantino", "quando": "Dom 29/11 · Brasileirão", "b": "1"}, {"casa": "Atlético-MG", "fora": "Vasco", "quando": "Dom 29/11 · Brasileirão", "b": "1"}, {"casa": "Real Sociedad", "fora": "Sevilla", "quando": "Dom 29/11 · Espanhol", "b": "1"}]}</script>
 <script>
 /* ====== EDITAR AQUI ====== */
 var CONFIG = {
@@ -413,33 +504,10 @@ var CONFIG = {
   palpites: false,   // true liga de volta: palpite da galera, palpite do povo, ranking e Minha área
   api: ""   // URL do Apps Script (termina em /exec). Vazio = o palpite vai pelo WhatsApp
 };
-var LOTECA = {
-  concurso: 1285,
-  premio: "R$ 1 milhão",
-  especial: true,
-  fechamento: "2026-11-28T15:45:00-03:00",   // bolão on-line: até 15 min antes do encerramento da Caixa (16h)
-  prazos: ["Retirada na lotérica: até sábado 28/11, 12h", "Compra on-line: até sábado 28/11, 15h45"],
-  bolao: {formato:"2 triplos + 4 duplos", cotas:12, restam:7, valor:"R$ 32,40"},   // null = "sendo montado"
-  // b = palpite do bolão ("1", "1X", "1X2"...). Depois do jogo: r = "1", "X" ou "2" e placar: "2 x 1"
-  jogos: [
-    {casa:"Palmeiras", fora:"Estudiantes", quando:"Sáb 28/11 · final da Libertadores", b:"1X"},
-    {casa:"Real Madrid", fora:"Alavés", quando:"Sáb 28/11 · Espanhol", b:"1"},
-    {casa:"Botafogo", fora:"Bahia", quando:"Sáb 28/11 · Brasileirão", b:"1"},
-    {casa:"Everton", fora:"Liverpool", quando:"Dom 29/11 · Inglês", b:"2"},
-    {casa:"Celta", fora:"Villarreal", quando:"Dom 29/11 · Espanhol", b:"1X2"},
-    {casa:"Valencia", fora:"Osasuna", quando:"Dom 29/11 · Espanhol", b:"1"},
-    {casa:"Coritiba", fora:"Flamengo", quando:"Dom 29/11 · Brasileirão", b:"X2"},
-    {casa:"Vitória", fora:"Santos", quando:"Dom 29/11 · Brasileirão", b:"X2"},
-    {casa:"Arsenal", fora:"Manchester City", quando:"Dom 29/11 · Inglês", b:"12"},
-    {casa:"Corinthians", fora:"Grêmio", quando:"Dom 29/11 · Brasileirão", b:"1"},
-    {casa:"Mirassol", fora:"Athletico-PR", quando:"Dom 29/11 · Brasileirão", b:"1X2"},
-    {casa:"Internacional", fora:"Bragantino", quando:"Dom 29/11 · Brasileirão", b:"1"},
-    {casa:"Atlético-MG", fora:"Vasco", quando:"Dom 29/11 · Brasileirão", b:"1"},
-    {casa:"Real Sociedad", fora:"Sevilla", quando:"Dom 29/11 · Espanhol", b:"1"}
-  ]
-};
+var LOTECA;   // vem do dados.json
 /* ====== FIM DA EDIÇÃO ====== */
 
+function iniciar(){
 /* modo de teste: bolaoloteca.com.br/?teste=1 (aberto) ou ?teste=final (com resultado). Grava no concurso "TESTE" da planilha. */
 var TESTE = /[?&]teste=/.test(location.search), TESTE_FINAL = /[?&]teste=final/.test(location.search);
 if(TESTE){
@@ -450,8 +518,8 @@ if(TESTE){
   document.getElementById("faixaTeste").hidden=false;
 }
 var PALP = CONFIG.palpites || TESTE;   // no modo teste (?teste=1) os palpites continuam visíveis
-if(!PALP){ ["palpite","povo","ranking","conta"].forEach(function(id){ document.getElementById(id).hidden=true; });
-  Array.prototype.forEach.call(document.querySelectorAll("[data-palp]"),function(x){ x.hidden=true; }); }
+if(PALP){ ["palpite","povo","ranking","conta"].forEach(function(id){ document.getElementById(id).hidden=false; });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-palp]"),function(x){ x.hidden=false; }); }
 function guarda(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
 function pega(k){ try{ return localStorage.getItem(k)||""; }catch(e){ return ""; } }
 function fmtFone(x){ var d=String(x).replace(/\D/g,"").slice(0,11);
@@ -475,7 +543,7 @@ mn.addEventListener("click",function(e){if(e.target.tagName==="A")menu(false);})
 document.getElementById("hEye").textContent = LOTECA.especial ? "Loteca · concurso especial" : "Loteca da semana";
 document.getElementById("hConc").textContent = "Concurso " + LOTECA.concurso;
 document.getElementById("hPremio").textContent = LOTECA.premio ? "Prêmio estimado " + LOTECA.premio : "";
-document.getElementById("hSub").textContent = !TEM ? "A grade deste concurso sai em breve." : RES ? "Jogos encerrados. Veja o resultado e o ranking." : LOTECA.especial ? "14 jogos · ganha quem acerta 14. Se ninguém fizer 14, o prêmio principal vai pra quem fez 13." : "14 jogos · acerte 13 ou 14 para ganhar";
+document.getElementById("hSub").textContent = !TEM ? "A grade deste concurso sai em breve." : RES ? (PALP ? "Jogos encerrados. Veja o resultado e o ranking." : "Jogos encerrados. Veja a conferência do bolão.") : LOTECA.especial ? "14 jogos · ganha quem acerta 14. Se ninguém fizer 14, o prêmio principal vai pra quem fez 13." : "14 jogos · acerte 13 ou 14 para ganhar";
 var cdEl=document.getElementById("hCd");
 function falta(ms){var m=Math.floor(ms/60000),d=Math.floor(m/1440),h=Math.floor(m%1440/60),mi=m%60;
   if(d>0)return d+(d>1?" dias, ":" dia, ")+h+"h e "+dd(mi)+"min"; if(h>0)return h+"h "+dd(mi)+"min"; return mi+" min";}
@@ -484,7 +552,7 @@ function tique(){ if(!FECHA||!TEM||RES){cdEl.hidden=true;return;} var ms=FECHA-D
   cdEl.hidden=false; cdEl.className="cd"+(ms<3*3600e3?" urg":""); cdEl.textContent=(PALP?"⏰ Palpites fecham em ":"⏰ Bolão fecha em ")+falta(ms); }
 
 (function(){
-  var bx=document.getElementById("bolaoBox"), b=LOTECA.bolao;
+  var bx=document.getElementById("bolaoBox"), b=LOTECA.bolao; bx.textContent="";
   bx.appendChild(el("p","eye","Bolão da semana"));
   bx.appendChild(el("h2",null,"Bolão da Loteca "+LOTECA.concurso));
   if(!b){ bx.appendChild(el("p",null,"O bolão desta semana está sendo montado. Reserve sua cota pelo WhatsApp ou veja os bolões que já estão abertos na Caixa."));
@@ -497,16 +565,27 @@ function tique(){ if(!FECHA||!TEM||RES){cdEl.hidden=true;return;} var ms=FECHA-D
   li("Jogo", b.formato); li("Cotas", b.cotas + " cotas"); bx.appendChild(ul);
   bx.appendChild(el("div",null,"Valor da cota"));
   bx.appendChild(el("div","cota",b.valor));
-  if(b.restam!=null) bx.appendChild(el("div","rest", b.restam>0 ? "Restam "+b.restam+" de "+b.cotas+" cotas" : "Esgotado"));
-  if(LOTECA.prazos){ var pz=el("ul","pz"); LOTECA.prazos.forEach(function(t){ pz.appendChild(el("li",null,t)); }); bx.appendChild(pz); }
+  var ESG = b.restam===0, ENC = !!RES || (FECHA && Date.now()>=FECHA.getTime());
+  if(b.restam!=null){ var rr=el("div","rest", ESG ? "Esgotado" : (b.restam===1?"Resta 1 de ":"Restam "+b.restam+" de ")+b.cotas+" cotas");
+    if(!ESG && !ENC && b.restam<=2) rr.appendChild(el("span","ult","Últimas cotas"));
+    bx.appendChild(rr);
+    var vend=b.cotas-b.restam; if(!ESG && vend>0){ var br=el("div","barra2"), f=el("i"); br.setAttribute("aria-hidden","true"); f.style.width=Math.max(6,Math.round(vend/b.cotas*100))+"%"; br.appendChild(f); bx.appendChild(br); } }
+  if(LOTECA.prazos && !ENC){ var pz=el("ul","pz"); LOTECA.prazos.forEach(function(t){ pz.appendChild(el("li",null,t)); }); bx.appendChild(pz); }
   var acts=el("div","acts");
-  var w=el("a","btn w2","Reservar pelo WhatsApp"); w.href=wa("Olá! Quero reservar uma cota do bolão da Loteca "+LOTECA.concurso+" ("+b.formato+"), cota de "+b.valor+"."); w.rel="noopener";
-  var o=el("a","btn o2","Comprar on-line"); o.href=CONFIG.linkCaixa; o.target="_blank"; o.rel="noopener";
-  acts.appendChild(w); acts.appendChild(o); bx.appendChild(acts);
-  bx.appendChild(el("p","nota","Valor da cota no balcão. Na compra on-line, a Caixa cobra uma pequena tarifa. Na Caixa, a lotérica aparece como Vilela & Granhani Ltda Me (código 001926): procure a Loteca "+LOTECA.concurso+"."));
+  if(ENC){ bx.appendChild(el("p","fim", RES ? "Bolão encerrado. Veja abaixo a conferência dos 14 jogos." : "Bolão encerrado. A conferência sai aqui depois dos jogos.")); }
+  else if(ESG){ var w1=el("a","btn w2","Me avise do próximo bolão"); w1.href=wa("Olá! O bolão da Loteca "+LOTECA.concurso+" esgotou. Me avisa do próximo?"); w1.rel="noopener"; acts.appendChild(w1); }
+  else {
+    var w=el("a","btn w2","Reservar pelo WhatsApp"); w.href=wa("Olá! Quero reservar uma cota do bolão da Loteca "+LOTECA.concurso+" ("+b.formato+"), cota de "+b.valor+"."); w.rel="noopener";
+    var o=el("a","btn o2","Comprar on-line"); o.href=CONFIG.linkCaixa; o.target="_blank"; o.rel="noopener"; o.setAttribute("data-cx","");
+    acts.appendChild(w); acts.appendChild(o); }
+  var s=el("button","btn s2"); s.type="button"; s.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M7 8l5-5 5 5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  s.appendChild(document.createTextNode("Mandar pros amigos"));
+  s.addEventListener("click",function(){ compartilhar({title:"Bolão da Loteca "+LOTECA.concurso, text:"Bolão da Loteca "+LOTECA.concurso+(LOTECA.premio?" · prêmio estimado "+LOTECA.premio:"")+" · "+b.formato+" · "+b.cotas+" cotas de "+b.valor+".", url:CONFIG.site+"/"}); });
+  acts.appendChild(s); bx.appendChild(acts);
+  if(!ENC && !ESG) bx.appendChild(el("p","nota","Valor da cota no balcão. Na compra on-line, a Caixa cobra uma pequena tarifa. Na Caixa, a lotérica aparece como Vilela & Granhani Ltda Me (código 001926): procure a Loteca "+LOTECA.concurso+"."));
 })();
 
-var lg=document.getElementById("listaGrade");
+var lg=document.getElementById("listaGrade"); lg.textContent="";
 function linhaJogo(j,i){ var l=el("li","jg"); l.appendChild(el("span","jn",String(i+1)));
   var t=el("div","jt"); t.appendChild(document.createTextNode(j.casa)); t.appendChild(el("span","x","x")); t.appendChild(document.createTextNode(j.fora)); l.appendChild(t); return l; }
 if(!TEM){ lg.appendChild(el("li","vazio","A grade do concurso "+LOTECA.concurso+" sai em breve.")); }
@@ -579,14 +658,23 @@ function tagBicho(k,extra){ var d=el("div","tag "+k); d.innerHTML=BICHO[k]; var 
   var li=document.querySelectorAll("#listaGrade > li");
   J.forEach(function(j,i){ if(!j.b||!li[i]) return;
     var v=el("div","vol"); v.appendChild(el("span",null,"Nosso palpite"));
-    ["1","X","2"].forEach(function(o){ v.appendChild(el("i", j.b.indexOf(o)>=0?"on":"", o)); });
+    ["1","X","2"].forEach(function(o){ v.appendChild(el("i", ((j.b.indexOf(o)>=0?"on":"")+(j.r===o?" res":"")).trim(), o)); });
+    if(j.r){ var ok=j.b.indexOf(j.r)>=0; v.appendChild(el("b", ok?"ok":"er", ok?"✓ Acertamos":"✗ Erramos")); }
     v.setAttribute("aria-label","Palpite do bolão: "+j.b.split("").join(" e "));
     li[i].appendChild(v);
     var t = j.b.length===3 ? tagBicho("zeb","Jogo aberto. Fomos de triplo.")
           : j.b==="1" ? tagBicho("dono","Confiamos no "+j.casa+" em casa.")
           : j.b==="2" ? tagBicho("cav","O "+j.fora+" entra e leva.")
           : j.b.indexOf("X")>=0 ? tagBicho("bic","Pode empatar. Fomos de duplo.") : null;
-    if(t) li[i].appendChild(t); });
+    if(t && !j.r) li[i].appendChild(t); });
+  var com=J.filter(function(j){return j.r&&j.b;}), ac=com.filter(function(j){return j.b.indexOf(j.r)>=0;}).length, cf=document.getElementById("conf");
+  if(cf && com.length){ cf.textContent=""; cf.hidden=false; var fim=com.length===J.length;
+    cf.appendChild(el("b",null, fim ? ac+" pontos" : ac+" de "+com.length));
+    cf.appendChild(el("span",null, !fim ? "acertos do nosso bolão até agora."
+      : ac===14 ? "PREMIADO! Nosso bolão fez 14 pontos."
+      : ac===13 ? (LOTECA.especial ? "13 pontos: leva o prêmio se ninguém fizer 14." : "PREMIADO! Nosso bolão fez 13 pontos.")
+      : "Não foi dessa vez. Bora pro próximo!"));
+    cf.classList.toggle("prem", fim && ac>=13); }
   document.getElementById("gradeSub").textContent="Em vermelho, o palpite do nosso bolão. 1 = casa · X = empate · 2 = visitante. Vale o placar do tempo normal, sem prorrogação nem pênaltis.";
 })();
 
@@ -666,6 +754,85 @@ document.getElementById("rdWa").href=wa("Olá! Vim pelo site Bolão Loteca.");
   new IntersectionObserver(function(e){ var on=!e[0].isIntersecting && e[0].boundingClientRect.top<0; fx.classList.toggle("on",on); document.body.style.paddingBottom=on?"76px":""; }).observe(box);
 })();
 carregar(); tique(); setInterval(tique,30000); setInterval(function(){ if(aberto()) carregar(); },120000);
+
+/* aviso antes de ir para a Caixa */
+var av=document.getElementById("aviso");
+document.getElementById("avIr").href=CONFIG.linkCaixa;
+document.getElementById("avZ").href=wa("Olá! Não achei o bolão da Loteca "+LOTECA.concurso+" na página da Caixa, pode me ajudar?");
+if(av && av.showModal){
+  document.addEventListener("click",function(e){ var o=e.target.closest&&e.target.closest("[data-cx]"); if(!o) return; e.preventDefault();
+    var b=LOTECA.bolao;
+    document.getElementById("avA").textContent="Loteca "+LOTECA.concurso+(b?" · "+(b.app||b.valor+" + tarifa da Caixa"):"");
+    document.getElementById("avB").textContent=b?b.formato:"";
+    document.getElementById("avC").textContent=b?b.cotas+" cotas":"";
+    av.showModal(); });
+  document.getElementById("avX").addEventListener("click",function(){av.close();});
+  document.getElementById("avIr").addEventListener("click",function(){av.close();});
+  av.addEventListener("click",function(e){if(e.target===av)av.close();});
+}
+}
+function compartilhar(x){ if(navigator.share){ navigator.share(x).catch(function(){}); return; }
+  window.open("https://wa.me/?text="+encodeURIComponent(x.text+"\n"+x.url),"_blank","noopener"); }
+/* vitrine: bolões abertos agora, lidos do Loterias 24 Horas */
+function vitrine(alvo, opt){
+  if(!alvo || !window.fetch) return; opt = opt || {};
+  var BASE="https://loterias24horas.com.br/", LOTN={mega:["Mega-Sena","#209869"],quina:["Quina","#5B2A86"],loteca:["Loteca","#C8102E"],milionaria:["+Milionária","#1F2A6B"],dupla:["Dupla Sena","#A6193C"],timemania:["Timemania","#00813C"],lotofacil:["Lotofácil","#930089"]};
+  var DIAS=["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"];
+  function num(v){ return parseFloat(String(v).replace(/[^\d,]/g,"").replace(",","."))||0; }
+  function dd(n){ return (n<10?"0":"")+n; }
+  function nb(v){ return String(v).replace("R$ ","R$\u00a0"); }
+  function rot(q, loteca){ var l=new Date(new Date(q).getTime()-108e5); return DIAS[l.getUTCDay()]+" "+dd(l.getUTCDate())+"/"+dd(l.getUTCMonth()+1)+(loteca?" · apostas até ":" · sorteio ")+l.getUTCHours()+"h"+(l.getUTCMinutes()?dd(l.getUTCMinutes()):""); }
+  function item(href, cor, nome, premio, linha){ var a=document.createElement("a"); a.className="vi"; a.href=href; a.style.setProperty("--c",cor);
+    [["vn",nome],["vp",premio||""],["vd",linha]].forEach(function(x){ var s=document.createElement("span"); s.className=x[0]; s.textContent=x[1]; a.appendChild(s); }); return a; }
+  fetch(BASE+"dados.json",{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(D){
+    var agora=Date.now(), g={}, ordem=[];
+    (D.boloes||[]).forEach(function(b){ if((opt.excluir||[]).indexOf(b.lot)>=0) return; if(new Date(b.quando).getTime()-9e5<=agora) return;
+      var k=b.lot+"|"+b.concurso; if(!g[k]){ g[k]=[]; ordem.push(k); } g[k].push(b); });
+    ordem.sort(function(a,b){ return new Date(g[a][0].quando)-new Date(g[b][0].quando); });
+    var lista=[];
+    ordem.slice(0, opt.max||4).forEach(function(k){ var L=g[k], b0=L[0], ab=L.filter(function(b){return b.restam>0;}), LN=LOTN[b0.lot]||[b0.lot,"#0E7A3E"];
+      var menor=ab.slice().sort(function(a,b){return num(a.valor)-num(b.valor);})[0];
+      var preco = menor ? (ab.length>1?"cota a partir de ":"cota de ")+nb(menor.valor) : "esgotado";
+      lista.push(item(BASE+"#b-"+(menor||b0).id, LN[1], (b0.nome||LN[0])+" "+b0.concurso, b0.premio, rot(b0.quando, b0.lot==="loteca")+" · "+preco)); });
+    var V=D.virada; if(V && V.boloes && V.boloes.length && opt.virada!==false){
+      var vm=V.boloes.filter(function(b){return b.restam>0;}).sort(function(a,b){return num(a.valor)-num(b.valor);})[0];
+      if(vm) lista.push(item(BASE+"#virada", "#0E7A3E", "Mega da Virada", V.premio, "Sorteio em 1º/01/2027 · cota a partir de "+nb(vm.valor))); }
+    if(!lista.length) return;
+    alvo.textContent=""; if(opt.titulo){ var h=document.createElement("p"); h.className="vt"; h.textContent=opt.titulo; alvo.appendChild(h); }
+    lista.forEach(function(a){ alvo.appendChild(a); }); alvo.hidden=false;
+  }).catch(function(){});
+}
+vitrine(document.getElementById("vit"), {excluir:["loteca"], max:4, titulo:"Abertos agora no Loterias 24 Horas"});
+/* Dona Zebra: embaixadinhas e "Deu zebra!" (o som só toca no toque, regra do navegador) */
+(function(){
+  var bt=document.getElementById("dz"); if(!bt) return;
+  var svg=bt.querySelector("svg"), bal=document.getElementById("balao");
+  var reduz=!!(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  var au=new Audio(); au.preload="none"; au.src="zebra.mp3";
+  var tms=[], orig=null;
+  function volta(){ if(orig!==null){ bal.textContent=orig; orig=null; } bal.classList.remove("pop"); }
+  function show(){
+    tms.forEach(clearTimeout); tms=[]; volta();
+    if(!reduz){ svg.classList.remove("show"); void svg.getBoundingClientRect(); svg.classList.add("show"); }
+    tms.push(setTimeout(function(){ orig=bal.textContent; bal.textContent="Deu zebra! 🦓"; void bal.offsetWidth; bal.classList.add("pop"); }, reduz?0:1550));
+    tms.push(setTimeout(function(){ svg.classList.remove("show"); }, 4700));
+    tms.push(setTimeout(volta, 6600));
+  }
+  bt.addEventListener("click",function(){
+    var foi=false; function vai(){ if(!foi){ foi=true; show(); } }
+    try{ au.currentTime=0; }catch(e){}
+    var p=null; try{ p=au.play(); }catch(e){}
+    if(p&&p.then){ p.then(vai,vai); setTimeout(vai,900); } else vai();
+  });
+  if(!reduz) setTimeout(show,1400);
+  if("IntersectionObserver" in window) new IntersectionObserver(function(es,o){ if(es[0].isIntersecting){ au.preload="auto"; try{au.load();}catch(e){} o.disconnect(); } }).observe(bt);
+})();
+/* os dados vêm do dados.json; se ele demorar, usa a cópia que já veio na página */
+(function(){ var EMB=JSON.parse(document.getElementById("dados").textContent), foi=false;
+  function vai(d){ if(foi) return; foi=true; LOTECA=d; iniciar(); }
+  if(window.fetch) fetch("dados.json",{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(vai,function(){ vai(EMB); });
+  setTimeout(function(){ vai(EMB); }, window.fetch?2500:0);
+})();
 </script>
 </body>
 </html>

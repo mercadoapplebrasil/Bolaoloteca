@@ -243,9 +243,9 @@ dialog.av::backdrop{background:rgba(0,0,0,.72)}
 
 .zebra{background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;font:inherit;color:inherit}
 @media(max-width:719px){.zebra{position:relative;width:124px}}
-@media(min-width:720px){.dz-som{top:10%;right:14%}}
+@media(min-width:720px){.dz-som{bottom:6%;right:10%}}
 .zebra svg{overflow:visible}
-.dz-som{position:absolute;top:-4px;right:-4px;width:34px;height:34px;border-radius:50%;background:#fff;border:3px solid var(--red);display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1;animation:dz-chama 1.6s ease-in-out infinite alternate}
+.dz-som{position:absolute;bottom:-2px;right:-6px;width:34px;height:34px;border-radius:50%;background:#fff;border:3px solid var(--red);display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1;animation:dz-chama 1.6s ease-in-out infinite alternate}
 @keyframes dz-chama{from{transform:scale(1)}to{transform:scale(1.12)}}
 .dz-cab{transform-origin:156px 168px;animation:dz-balanca 3.2s ease-in-out infinite alternate}
 .dz-olhos{transform-origin:161px 104px;animation:dz-pisca 4.6s linear infinite}
@@ -254,21 +254,24 @@ dialog.av::backdrop{background:rgba(0,0,0,.72)}
 .dz-bola{transform-box:fill-box;transform-origin:50% 50%}
 .dz-pata{transform-origin:118px 226px}
 .dz-boca{transform-origin:162px 148px}
+.dz-gol{transform-origin:277px 38px;opacity:0}
 @keyframes dz-balanca{from{transform:rotate(-2deg)}to{transform:rotate(2deg)}}
 @keyframes dz-pisca{0%,93%,97%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
 @keyframes dz-orelha{0%,88%,97%,100%{transform:rotate(0)}91%{transform:rotate(14deg)}94%{transform:rotate(-5deg)}}
 .balao.pop{animation:dz-pop .45s cubic-bezier(.2,.9,.3,1.4)}
 @keyframes dz-pop{0%{transform:scale(.6)}100%{transform:scale(1)}}
 
-@keyframes dz-bola{0.00%{transform:translateY(0px) rotate(0deg)}2.17%{transform:translateY(0px) rotate(0deg);animation-timing-function:cubic-bezier(.2,.75,.45,1)}6.96%{transform:translateY(-46px) rotate(60deg);animation-timing-function:cubic-bezier(.55,0,.85,.35)}11.96%{transform:translateY(0px) rotate(120deg);animation-timing-function:cubic-bezier(.2,.75,.45,1)}16.74%{transform:translateY(-46px) rotate(180deg);animation-timing-function:cubic-bezier(.55,0,.85,.35)}21.74%{transform:translateY(0px) rotate(240deg);animation-timing-function:cubic-bezier(.2,.75,.45,1)}26.09%{transform:translateY(-46px) rotate(300deg);animation-timing-function:cubic-bezier(.55,0,.85,.35)}30.43%{transform:translateY(0px) rotate(360deg);animation-timing-function:cubic-bezier(.2,.75,.45,1)}38.04%{transform:translateY(-118px) rotate(540deg);animation-timing-function:cubic-bezier(.55,0,.85,.35)}45.65%{transform:translateY(0px) rotate(720deg);animation-timing-function:cubic-bezier(.2,.75,.45,1)}48.91%{transform:translateY(-16px) rotate(750deg);animation-timing-function:cubic-bezier(.55,0,.85,.35)}52.17%{transform:translateY(0px) rotate(770deg)}100.00%{transform:translateY(0px) rotate(770deg)}}
-@keyframes dz-pata{0.00%{transform:rotate(0deg)}0.87%{transform:rotate(0deg)}2.17%{transform:rotate(-9deg)}5.22%{transform:rotate(0deg)}10.65%{transform:rotate(0deg)}11.96%{transform:rotate(-9deg)}15.00%{transform:rotate(0deg)}20.43%{transform:rotate(0deg)}21.74%{transform:rotate(-9deg)}24.78%{transform:rotate(0deg)}29.13%{transform:rotate(0deg)}30.43%{transform:rotate(-16deg)}33.48%{transform:rotate(0deg)}100.00%{transform:rotate(0deg)}}
-@keyframes dz-pup{0.00%{transform:translate(0px,0px)}1.74%{transform:translate(-4px,5px)}30.43%{transform:translate(-4px,5px)}33.70%{transform:translate(-3px,-6px)}39.13%{transform:translate(-3px,-6px)}45.65%{transform:translate(-4px,5px)}50.00%{transform:translate(0px,0px)}100.00%{transform:translate(0px,0px)}}
+@keyframes dz-bola{0.00%{transform:translate(0px,0px) rotate(0deg) scale(1);opacity:1}4.35%{transform:translate(0px,0px) rotate(0deg) scale(1);animation-timing-function:cubic-bezier(.2,.75,.45,1)}14.78%{transform:translate(46px,-267px) rotate(200deg) scale(0.9);animation-timing-function:cubic-bezier(.55,0,.85,.35)}23.91%{transform:translate(94px,-240px) rotate(330deg) scale(0.9);animation-timing-function:cubic-bezier(.3,.6,.6,1)}34.78%{transform:translate(223px,-224px) rotate(620deg) scale(0.3);opacity:1}76.09%{transform:translate(223px,-216px) rotate(620deg) scale(0.3);opacity:1}80.43%{transform:translate(223px,-216px) rotate(620deg) scale(0.3);opacity:0}81.52%{transform:translate(0px,0px) rotate(0deg) scale(1);opacity:0}88.04%{transform:translate(0px,0px) rotate(0deg) scale(1);opacity:1}100.00%{transform:translate(0px,0px) rotate(0deg) scale(1);opacity:1}}
+@keyframes dz-pata{0.00%{transform:rotate(0deg)}2.61%{transform:rotate(9deg)}5.65%{transform:rotate(-30deg)}13.04%{transform:rotate(0deg)}100.00%{transform:rotate(0deg)}}
+@keyframes dz-pup{0.00%{transform:translate(0px,0px)}2.17%{transform:translate(-4px,5px)}7.61%{transform:translate(-4px,-6px)}15.22%{transform:translate(-2px,-7px)}23.91%{transform:translate(0px,-7px)}32.61%{transform:translate(5px,-6px)}43.48%{transform:translate(5px,-6px)}50.00%{transform:translate(0px,0px)}100.00%{transform:translate(0px,0px)}}
 @keyframes dz-olhos{0.00%{transform:scale(1)}32.61%{transform:scale(1)}35.22%{transform:scale(1.16)}68.48%{transform:scale(1.16)}71.74%{transform:scale(1)}100.00%{transform:scale(1)}}
-@keyframes dz-sob{0.00%{transform:translate(0px,0px)}32.61%{transform:translate(0px,0px)}35.22%{transform:translate(0px,-8px)}68.48%{transform:translate(0px,-8px)}71.74%{transform:translate(0px,0px)}100.00%{transform:translate(0px,0px)}}
-@keyframes dz-cab{0.00%{transform:rotate(0deg)}2.17%{transform:rotate(2deg)}6.52%{transform:rotate(-1deg)}11.96%{transform:rotate(2deg)}16.30%{transform:rotate(-1deg)}21.74%{transform:rotate(2deg)}26.09%{transform:rotate(-1deg)}30.43%{transform:rotate(3deg)}35.87%{transform:rotate(-3deg)}38.48%{transform:rotate(6deg)}41.09%{transform:rotate(-6deg)}43.70%{transform:rotate(6deg)}46.30%{transform:rotate(-6deg)}48.91%{transform:rotate(6deg)}51.52%{transform:rotate(-6deg)}54.13%{transform:rotate(6deg)}56.74%{transform:rotate(-6deg)}59.35%{transform:rotate(6deg)}61.96%{transform:rotate(-6deg)}64.57%{transform:rotate(6deg)}66.30%{transform:rotate(0deg)}70.65%{transform:rotate(5deg)}75.00%{transform:rotate(-1deg)}79.35%{transform:rotate(0deg)}100.00%{transform:rotate(0deg)}}
-@keyframes dz-boca{0.00%{transform:scaleY(1)}34.78%{transform:scaleY(1)}36.96%{transform:scaleY(1.7)}39.57%{transform:scaleY(1.25)}42.17%{transform:scaleY(1.7)}44.78%{transform:scaleY(1.25)}47.39%{transform:scaleY(1.7)}50.00%{transform:scaleY(1.25)}52.61%{transform:scaleY(1.7)}55.22%{transform:scaleY(1.25)}57.83%{transform:scaleY(1.7)}60.43%{transform:scaleY(1.25)}63.04%{transform:scaleY(1.7)}65.65%{transform:scaleY(1.25)}66.30%{transform:scaleY(1)}100.00%{transform:scaleY(1)}}
-@keyframes dz-dz-oe{0.00%{transform:rotate(0deg)}35.87%{transform:rotate(0deg)}38.48%{transform:rotate(-12deg)}41.09%{transform:rotate(4deg)}43.70%{transform:rotate(-12deg)}46.30%{transform:rotate(4deg)}48.91%{transform:rotate(-12deg)}51.52%{transform:rotate(4deg)}54.13%{transform:rotate(-12deg)}56.74%{transform:rotate(4deg)}59.35%{transform:rotate(-12deg)}61.96%{transform:rotate(4deg)}64.57%{transform:rotate(-12deg)}66.30%{transform:rotate(0deg)}100.00%{transform:rotate(0deg)}}
-@keyframes dz-dz-od{0.00%{transform:rotate(0deg)}35.87%{transform:rotate(0deg)}38.48%{transform:rotate(12deg)}41.09%{transform:rotate(-4deg)}43.70%{transform:rotate(12deg)}46.30%{transform:rotate(-4deg)}48.91%{transform:rotate(12deg)}51.52%{transform:rotate(-4deg)}54.13%{transform:rotate(12deg)}56.74%{transform:rotate(-4deg)}59.35%{transform:rotate(12deg)}61.96%{transform:rotate(-4deg)}64.57%{transform:rotate(12deg)}66.30%{transform:rotate(0deg)}100.00%{transform:rotate(0deg)}}
+@keyframes dz-sob{0.00%{transform:translate(0px,0px)}6.52%{transform:translate(0px,-5px)}32.61%{transform:translate(0px,-5px)}35.22%{transform:translate(0px,-9px)}68.48%{transform:translate(0px,-9px)}71.74%{transform:translate(0px,0px)}100.00%{transform:translate(0px,0px)}}
+@keyframes dz-cab{0.00%{transform:translateY(0px) rotate(0deg)}6.52%{transform:translateY(0px) rotate(-3deg)}18.48%{transform:translateY(4px) rotate(-3deg)}22.17%{transform:translateY(12px) rotate(-5deg)}23.91%{transform:translateY(-18px) rotate(7deg)}28.26%{transform:translateY(-4px) rotate(3deg)}32.61%{transform:translateY(0px) rotate(0deg)}38.04%{transform:translateY(0px) rotate(-3deg)}40.65%{transform:translateY(-4px) rotate(6deg)}43.26%{transform:translateY(0px) rotate(-6deg)}45.87%{transform:translateY(-4px) rotate(6deg)}48.48%{transform:translateY(0px) rotate(-6deg)}51.09%{transform:translateY(-4px) rotate(6deg)}53.70%{transform:translateY(0px) rotate(-6deg)}56.30%{transform:translateY(-4px) rotate(6deg)}58.91%{transform:translateY(0px) rotate(-6deg)}61.52%{transform:translateY(-4px) rotate(6deg)}64.13%{transform:translateY(0px) rotate(-6deg)}66.74%{transform:translateY(-4px) rotate(6deg)}67.39%{transform:translateY(0px) rotate(0deg)}71.74%{transform:translateY(0px) rotate(5deg)}76.09%{transform:translateY(0px) rotate(-1deg)}80.43%{transform:translateY(0px) rotate(0deg)}100.00%{transform:translateY(0px) rotate(0deg)}}
+@keyframes dz-boca{0.00%{transform:scaleY(1)}34.78%{transform:scaleY(1)}37.39%{transform:scaleY(1.8)}40.00%{transform:scaleY(1.3)}42.61%{transform:scaleY(1.8)}45.22%{transform:scaleY(1.3)}47.83%{transform:scaleY(1.8)}50.43%{transform:scaleY(1.3)}53.04%{transform:scaleY(1.8)}55.65%{transform:scaleY(1.3)}58.26%{transform:scaleY(1.8)}60.87%{transform:scaleY(1.3)}63.48%{transform:scaleY(1.8)}66.09%{transform:scaleY(1.3)}67.39%{transform:scaleY(1)}100.00%{transform:scaleY(1)}}
+@keyframes dz-dz-oe{0.00%{transform:rotate(0deg)}36.96%{transform:rotate(0deg)}39.57%{transform:rotate(-12deg)}42.17%{transform:rotate(4deg)}44.78%{transform:rotate(-12deg)}47.39%{transform:rotate(4deg)}50.00%{transform:rotate(-12deg)}52.61%{transform:rotate(4deg)}55.22%{transform:rotate(-12deg)}57.83%{transform:rotate(4deg)}60.43%{transform:rotate(-12deg)}63.04%{transform:rotate(4deg)}65.65%{transform:rotate(-12deg)}67.39%{transform:rotate(0deg)}100.00%{transform:rotate(0deg)}}
+@keyframes dz-dz-od{0.00%{transform:rotate(0deg)}36.96%{transform:rotate(0deg)}39.57%{transform:rotate(12deg)}42.17%{transform:rotate(-4deg)}44.78%{transform:rotate(12deg)}47.39%{transform:rotate(-4deg)}50.00%{transform:rotate(12deg)}52.61%{transform:rotate(-4deg)}55.22%{transform:rotate(12deg)}57.83%{transform:rotate(-4deg)}60.43%{transform:rotate(12deg)}63.04%{transform:rotate(-4deg)}65.65%{transform:rotate(12deg)}67.39%{transform:rotate(0deg)}100.00%{transform:rotate(0deg)}}
+@keyframes dz-gol{0.00%{opacity:0;transform:scale(.6)}16.30%{opacity:0;transform:scale(.6)}21.74%{opacity:1;transform:scale(1.08)}23.91%{opacity:1;transform:scale(1)}78.26%{opacity:1;transform:scale(1)}84.78%{opacity:0;transform:scale(.6)}100.00%{opacity:0;transform:scale(.6)}}
+@keyframes dz-rede{0.00%{transform:translate(0px,0px)}34.35%{transform:translate(0px,0px)}36.09%{transform:translate(7px,-2px)}38.26%{transform:translate(-4px,1px)}40.43%{transform:translate(3px,0px)}42.61%{transform:translate(0px,0px)}100.00%{transform:translate(0px,0px)}}
 .dz.show .dz-bola{animation:dz-bola 4.6s linear both}
 .dz.show .dz-pata{animation:dz-pata 4.6s linear both}
 .dz.show .dz-pup{animation:dz-pup 4.6s linear both}
@@ -278,6 +281,8 @@ dialog.av::backdrop{background:rgba(0,0,0,.72)}
 .dz.show .dz-boca{animation:dz-boca 4.6s linear both}
 .dz.show .dz-oe{animation:dz-dz-oe 4.6s linear both}
 .dz.show .dz-od{animation:dz-dz-od 4.6s linear both}
+.dz.show .dz-gol{animation:dz-gol 4.6s linear both}
+.dz.show .dz-rede{animation:dz-rede 4.6s linear both}
 @media (prefers-reduced-motion:reduce){.dz-som,.dz-cab,.dz-olhos,.dz-od,.balao.pop{animation:none}}
 .vit{display:grid;gap:10px;margin:0 0 18px}
 .vt{margin:0;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rosa)}
@@ -326,6 +331,7 @@ dialog.av::backdrop{background:rgba(0,0,0,.72)}
         <clipPath id="zc"><path d="M150 150c-18 0-30 14-32 40l-4 130h74l-6-130c-2-26-14-40-32-40z"/></clipPath>
         <clipPath id="zh"><ellipse cx="160" cy="110" rx="66" ry="60"/></clipPath>
       </defs>
+      <g class="dz-gol"><g class="dz-rede" stroke="#fff" stroke-width="1.6" opacity=".7"><path d="M242 8V70M256 8V70M270 8V70M284 8V70M298 8V70M312 8V70M229 20H325M229 33H325M229 46H325M229 59H325"/></g><path d="M228 72V6H326V72" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></g>
       <path d="M150 150c-18 0-30 14-32 40l-4 130h74l-6-130c-2-26-14-40-32-40z" fill="#F6F2EC" stroke="#121212" stroke-width="6"/>
       <g clip-path="url(#zc)" fill="#121212"><path d="M100 196h100l-6 16H106z M102 230h100l-6 16H108z M104 264h100l-6 16H110z M106 298h100l-6 22H112z"/></g>
       <g class="dz-cab">
@@ -803,7 +809,7 @@ function vitrine(alvo, opt){
   }).catch(function(){});
 }
 vitrine(document.getElementById("vit"), {excluir:["loteca"], max:4, titulo:"Abertos agora no Loterias 24 Horas"});
-/* Dona Zebra: embaixadinhas e "Deu zebra!" (o som só toca no toque, regra do navegador) */
+/* Dona Zebra: joga a bola para o alto, gol de cabeça e "Deu zebra!" (o som só toca no toque, regra do navegador) */
 (function(){
   var bt=document.getElementById("dz"); if(!bt) return;
   var svg=bt.querySelector("svg"), bal=document.getElementById("balao");
@@ -814,7 +820,7 @@ vitrine(document.getElementById("vit"), {excluir:["loteca"], max:4, titulo:"Aber
   function show(){
     tms.forEach(clearTimeout); tms=[]; volta();
     if(!reduz){ svg.classList.remove("show"); void svg.getBoundingClientRect(); svg.classList.add("show"); }
-    tms.push(setTimeout(function(){ orig=bal.textContent; bal.textContent="Deu zebra! 🦓"; void bal.offsetWidth; bal.classList.add("pop"); }, reduz?0:1550));
+    tms.push(setTimeout(function(){ orig=bal.textContent; bal.textContent="GOOOL! Deu zebra! 🦓"; void bal.offsetWidth; bal.classList.add("pop"); }, reduz?0:1640));
     tms.push(setTimeout(function(){ svg.classList.remove("show"); }, 4700));
     tms.push(setTimeout(volta, 6600));
   }

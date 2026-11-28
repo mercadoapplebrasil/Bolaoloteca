@@ -212,6 +212,7 @@ h2 i{color:var(--red);font-style:normal}
 footer{background:#0A0A0A;color:var(--mut);margin-top:56px;font-size:16px;border-top:3px solid var(--red)}
 footer .w{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;padding:32px 18px}
 footer b{color:var(--tx)}
+.final{display:block;margin:14px 0 4px;padding:14px 16px;border-radius:16px;background:linear-gradient(135deg,#0B6B3A,#0E8A4A);color:#fff;text-decoration:none;border:2px solid #F5C842;box-shadow:0 6px 18px rgba(0,0,0,.3)}.final .fb{display:inline-block;background:#F5C842;color:#121212;font-weight:900;font-size:13px;letter-spacing:.06em;padding:4px 10px;border-radius:999px}.final b{display:block;font-size:22px;margin:8px 0 2px}.final small{font-size:15px;color:#E6F7EC}
 footer a{color:var(--rosa)}
 .rest .ult{display:inline-block;margin-left:8px;background:#fff;color:var(--red2);font-size:13px;font-weight:800;padding:2px 9px;border-radius:99px;text-transform:uppercase;letter-spacing:.04em;vertical-align:2px}
 .barra2{height:9px;background:rgba(0,0,0,.25);border-radius:99px;margin-top:8px;overflow:hidden}
@@ -323,8 +324,9 @@ dialog.av::backdrop{background:rgba(0,0,0,.72)}
     <p class="eye" id="hEye">Loteca · concurso especial</p>
     <h1 id="hTit">Loteca <small id="hConc">Concurso 1285</small></h1>
     <div class="d hp" id="hPremio">Prêmio estimado R$ 1 milhão</div>
-    <p class="hs" id="hSub">Concurso especial: quem acerta os 14 jogos leva o prêmio. Se ninguém acertar os 14, o prêmio vai pra quem acertou 13.</p>
+    <p class="hs" id="hSub"></p>
     <div class="cd" id="hCd" hidden></div>
+    <a class="final" id="final" href="#grade" hidden><span class="fb">⚽ HOJE TEM FINAL</span><b>Palmeiras x Estudiantes · 17h</b><small>Final da Libertadores · é o jogo 1 do nosso bolão</small></a>
     <div class="fala">
       <div class="balao" id="balao">Aqui o palpite é sério. Se der zebra, eu avisei.</div>
       <button class="zebra" id="dz" type="button" aria-label="Dona Zebra: toque para ouvir"><svg class="dz" viewBox="0 0 300 320" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
@@ -550,7 +552,8 @@ mn.addEventListener("click",function(e){if(e.target.tagName==="A")menu(false);})
 document.getElementById("hEye").textContent = LOTECA.especial ? "Loteca · concurso especial" : "Loteca da semana";
 document.getElementById("hConc").textContent = "Concurso " + LOTECA.concurso;
 document.getElementById("hPremio").textContent = LOTECA.premio ? "Prêmio estimado " + LOTECA.premio : "";
-document.getElementById("hSub").textContent = !TEM ? "A grade deste concurso sai em breve." : RES ? (PALP ? "Jogos encerrados. Veja o resultado e o ranking." : "Jogos encerrados. Veja a conferência do bolão.") : LOTECA.especial ? "Concurso especial: quem acerta os 14 jogos leva o prêmio. Se ninguém acertar os 14, o prêmio vai pra quem acertou 13." : "14 jogos · acerte 13 ou 14 para ganhar";
+document.getElementById("hSub").textContent = !TEM ? "A grade deste concurso sai em breve." : RES ? (PALP ? "Jogos encerrados. Veja o resultado e o ranking." : "Jogos encerrados. Veja a conferência do bolão.") : LOTECA.especial ? "" : "14 jogos · acerte 13 ou 14 para ganhar";
+document.getElementById("hSub").hidden = !document.getElementById("hSub").textContent;
 var cdEl=document.getElementById("hCd");
 function falta(ms){var m=Math.floor(ms/60000),d=Math.floor(m/1440),h=Math.floor(m%1440/60),mi=m%60;
   if(d>0)return d+(d>1?" dias, ":" dia, ")+h+"h e "+dd(mi)+"min"; if(h>0)return h+"h "+dd(mi)+"min"; return mi+" min";}
@@ -859,6 +862,10 @@ function ligaSom(b,au,inicia,ativo){
   if(window.fetch) fetch("dados.json",{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(vai,function(){ vai(EMB); });
   setTimeout(function(){ vai(EMB); }, window.fetch?2500:0);
 })();
+</script>
+<script>
+/* banner do jogo grande: aparece só no dia, até o fim do jogo */
+(function(){var f=document.getElementById("final");if(!f)return;var a=Date.now();if(a>=Date.parse("2026-11-28T00:00:00-03:00")&&a<Date.parse("2026-11-28T20:30:00-03:00"))f.hidden=false;})();
 /* sons curtos da interface (só tocam depois de um toque; respeitam o modo silencioso do celular) */
 (function(){
   var C=null;

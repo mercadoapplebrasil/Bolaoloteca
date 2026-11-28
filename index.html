@@ -240,12 +240,13 @@ dialog.av::backdrop{background:rgba(0,0,0,.72)}
 .av button.fx{background:none;border:0;font:inherit;font-size:16px;font-weight:700;color:var(--mut);min-height:44px;cursor:pointer;text-decoration:underline}
 .av p.cod{margin:12px 0 0;font-size:14px;text-align:center}
 .av a.avz{display:block;text-align:center;font-size:15px;color:var(--rosa);font-weight:700;margin-top:6px}
-
+.somb{position:absolute;top:12px;right:12px;z-index:3;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;min-width:48px;padding:0 17px 0 13px;border-radius:24px;border:1.5px solid rgba(255,255,255,.3);background:rgba(24,24,27,.9);color:#fff;font:inherit;font-weight:800;font-size:16px;line-height:1;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:transparent;box-shadow:0 4px 14px rgba(0,0,0,.28)}.somb svg{width:22px;height:22px;flex:none;fill:currentColor}.somb .i2{display:none}.somb.min,.somb.on{padding:0;width:48px}.somb.min span,.somb.on span{display:none}.somb.on{background:#B3261E;border-color:#B3261E}.somb.on .i1{display:none}.somb.on .i2{display:block}.somb:focus-visible{outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 6px #14213D}
 .zebra{background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;font:inherit;color:inherit}
 @media(max-width:719px){.zebra{position:relative;width:124px}}
-@media(min-width:720px){.dz-som{bottom:6%;right:10%}}
 .zebra svg{overflow:visible}
-.dz-som{position:absolute;bottom:-2px;right:-6px;width:34px;height:34px;border-radius:50%;background:#fff;border:3px solid var(--red);display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1;animation:dz-chama 1.6s ease-in-out infinite alternate}
+.fala{position:relative}
+.fala .somb{top:auto;right:-8px;bottom:-4px;height:42px;min-width:42px;width:42px}
+.fala .somb svg{width:20px;height:20px}
 @keyframes dz-chama{from{transform:scale(1)}to{transform:scale(1.12)}}
 .dz-cab{transform-origin:156px 168px;animation:dz-balanca 3.2s ease-in-out infinite alternate}
 .dz-olhos{transform-origin:161px 104px;animation:dz-pisca 4.6s linear infinite}
@@ -283,7 +284,7 @@ dialog.av::backdrop{background:rgba(0,0,0,.72)}
 .dz.show .dz-od{animation:dz-dz-od 4.6s linear both}
 .dz.show .dz-gol{animation:dz-gol 4.6s linear both}
 .dz.show .dz-rede{animation:dz-rede 4.6s linear both}
-@media (prefers-reduced-motion:reduce){.dz-som,.dz-cab,.dz-olhos,.dz-od,.balao.pop{animation:none}}
+@media (prefers-reduced-motion:reduce){.dz-cab,.dz-olhos,.dz-od,.balao.pop{animation:none}}
 .vit{display:grid;gap:10px;margin:0 0 18px}
 .vt{margin:0;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rosa)}
 .vi{display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:baseline;background:var(--bg2);border:1px solid var(--line);border-left:6px solid var(--c,#D5261F);border-radius:14px;padding:12px 14px;text-decoration:none;color:var(--tx)}
@@ -358,7 +359,7 @@ dialog.av::backdrop{background:rgba(0,0,0,.72)}
       <path d="M71 244l19-6 7 18-12 12-8-4z M37 244l-19-6-7 18 12 12 8-4z M48 264l-9 16 9 16h12l9-16-9-16z" fill="#121212"/>
       <path d="M54 232l-1-14 M71 244l17-12 M37 244l-17-12 M78 268l15 8 M30 268l-15 8" stroke="#121212" stroke-width="4" stroke-linecap="round"/>
       </g>
-    </svg><span class="dz-som" aria-hidden="true">🔊</span></button>
+    </svg></button><button class="somb min" id="somb" type="button" aria-pressed="false" aria-label="Toque pra tocar o som"><svg class="i1" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5v11.1a3.5 3.5 0 1 0 2 3.15V8.2l7-1.75v6.15a3.5 3.5 0 1 0 2 3.15V2z"/></svg><svg class="i2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></button>
     </div>
     <div class="chips">
       <a class="chip r" href="#bolao">Ver o bolão</a>
@@ -817,6 +818,14 @@ vitrine(document.getElementById("vit"), {excluir:["loteca"], max:4, titulo:"Aber
     var x=document.getElementById("fxR"); if(x) x.textContent="Restam "+m.restam+" de "+bo.cotas; }});
 /* Dona Zebra: joga a bola para o alto, gol de cabeça e "Deu zebra!" (o som só toca no toque, regra do navegador) */
 (function(){
+function ligaSom(b,au,inicia,ativo){
+  if(!b)return;
+  function est(t){b.classList.toggle("on",t);if(t)b.classList.add("min");b.setAttribute("aria-pressed",t?"true":"false");b.setAttribute("aria-label",t?"Pausar o som":"Toque pra tocar o som");}
+  au.addEventListener("playing",function(){if(ativo())est(true);});
+  ["pause","ended"].forEach(function(e){au.addEventListener(e,function(){est(false);});});
+  b.addEventListener("click",function(ev){ev.stopPropagation();if(b.classList.contains("on")){try{au.pause();}catch(x){}}else{b.classList.add("min");inicia();}});
+  setTimeout(function(){b.classList.add("min");},7000);
+}
   var bt=document.getElementById("dz"); if(!bt) return;
   var svg=bt.querySelector("svg"), bal=document.getElementById("balao");
   var reduz=!!(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches);
@@ -830,12 +839,15 @@ vitrine(document.getElementById("vit"), {excluir:["loteca"], max:4, titulo:"Aber
     tms.push(setTimeout(function(){ svg.classList.remove("show"); }, 4700));
     tms.push(setTimeout(volta, 6600));
   }
-  bt.addEventListener("click",function(){
-    var foi=false; function vai(){ if(!foi){ foi=true; show(); } }
+  var comSom=false;
+  function toca(){
+    var foi=false; comSom=true; function vai(){ if(!foi){ foi=true; show(); } }
     try{ au.currentTime=0; }catch(e){}
     var p=null; try{ p=au.play(); }catch(e){}
     if(p&&p.then){ p.then(vai,vai); setTimeout(vai,900); } else vai();
-  });
+  }
+  bt.addEventListener("click",toca);
+  ligaSom(document.getElementById("somb"),au,toca,function(){return comSom;});
   if(!reduz) setTimeout(show,1400);
   /* o som só baixa depois que a página terminou de carregar, pra não disputar banda com o conteúdo */
   var arma=function(){ setTimeout(function(){ if("IntersectionObserver" in window) new IntersectionObserver(function(es,o){ if(es[0].isIntersecting){ au.preload="auto"; try{au.load();}catch(e){} o.disconnect(); } }).observe(bt); },2500); };

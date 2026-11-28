@@ -241,7 +241,7 @@ dialog.av::backdrop{background:rgba(0,0,0,.72)}
 .av button.fx{background:none;border:0;font:inherit;font-size:16px;font-weight:700;color:var(--mut);min-height:44px;cursor:pointer;text-decoration:underline}
 .av p.cod{margin:12px 0 0;font-size:14px;text-align:center}
 .av a.avz{display:block;text-align:center;font-size:15px;color:var(--rosa);font-weight:700;margin-top:6px}
-.somb{position:absolute;top:12px;right:12px;z-index:3;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;min-width:48px;padding:0 17px 0 13px;border-radius:24px;border:1.5px solid rgba(255,255,255,.3);background:rgba(24,24,27,.9);color:#fff;font:inherit;font-weight:800;font-size:16px;line-height:1;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:transparent;box-shadow:0 4px 14px rgba(0,0,0,.28)}.somb svg{width:22px;height:22px;flex:none;fill:currentColor}.somb .i2{display:none}.somb.min,.somb.on{padding:0;width:48px}.somb.min span,.somb.on span{display:none}.somb.on{background:#B3261E;border-color:#B3261E}.somb.on .i1{display:none}.somb.on .i2{display:block}.somb:focus-visible{outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 6px #14213D}
+.somb{position:absolute;top:12px;right:12px;z-index:3;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;min-width:48px;padding:0 17px 0 13px;border-radius:24px;border:1.5px solid rgba(255,255,255,.3);background:rgba(24,24,27,.9);color:#fff;font:inherit;font-weight:800;font-size:16px;line-height:1;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:transparent;box-shadow:0 4px 14px rgba(0,0,0,.28)}.somb svg{width:22px;height:22px;flex:none;fill:currentColor}.somb .i2{display:none}.somb.min,.somb.on{padding:0;width:48px}.somb.min span,.somb.on span{display:none}.somb.on{background:#B3261E;border-color:#B3261E}.somb.on .i1{display:none}.somb.on .i2{display:block}.somb.esp svg{animation:somb-esp .7s ease-in-out infinite alternate}@keyframes somb-esp{from{opacity:1}to{opacity:.35}}.somb:focus-visible{outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 6px #14213D}
 .zebra{background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;font:inherit;color:inherit}
 @media(max-width:719px){.zebra{position:relative;width:124px}}
 .zebra svg{overflow:visible}
@@ -286,6 +286,22 @@ dialog.av::backdrop{background:rgba(0,0,0,.72)}
 .dz.show .dz-gol{animation:dz-gol 4.6s linear both}
 .dz.show .dz-rede{animation:dz-rede 4.6s linear both}
 @media (prefers-reduced-motion:reduce){.dz-cab,.dz-olhos,.dz-od,.balao.pop{animation:none}}
+/* cartão do bolão enxuto (28/11) */
+.bolao{padding:18px 16px 16px}
+.bolao h2{font-size:26px;margin:0 0 2px}
+.bolao .resumo{margin:0 0 10px;font-size:17px;font-weight:600}
+.bolao .cota{font-size:40px;margin:0 0 2px}
+.bolao .cota small{font-family:Inter,system-ui,sans-serif;font-size:16px;font-weight:600}
+.bolao .rest{font-size:16px}
+.bolao .pz2{margin:10px 0 0;font-size:14px;font-weight:600;color:#fff}
+.bolao .acts{grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.bolao .acts>*:first-child{grid-column:1/-1}
+.bolao .acts .o2,.bolao .acts .s2{min-height:50px;font-size:16px;padding-left:8px;padding-right:8px}
+/* Dona Zebra entre o bolão e os 14 jogos */
+.zb{padding-top:22px;padding-bottom:0}
+.zb .fala{margin:0 auto;max-width:560px}
+.zb .zebra{position:static;width:150px;margin:0 0 -6px}
+@media(min-width:720px){.zb .zebra{width:210px}.hero .w{min-height:0}}
 .vit{display:grid;gap:10px;margin:0 0 18px}
 .vt{margin:0;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rosa)}
 .vi{display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:baseline;background:var(--bg2);border:1px solid var(--line);border-left:6px solid var(--c,#D5261F);border-radius:14px;padding:12px 14px;text-decoration:none;color:var(--tx)}
@@ -327,6 +343,19 @@ dialog.av::backdrop{background:rgba(0,0,0,.72)}
     <p class="hs" id="hSub"></p>
     <div class="cd" id="hCd" hidden></div>
     <a class="final" id="final" href="#grade" hidden><span class="fb">⚽ HOJE TEM FINAL</span><b>Palmeiras x Estudiantes · 17h</b><small>Final da Libertadores · é o jogo 1 do nosso bolão</small></a>
+    <div class="chips">
+      <a class="chip r" href="#bolao">Ver o bolão</a>
+      <a data-palp hidden class="chip" href="#palpite">Dar meu palpite</a>
+    </div>
+  </div>
+</div>
+
+<main>
+<section class="w" id="bolao">
+  <div class="bolao" id="bolaoBox"><h2>Bolão da Loteca 1285</h2><p class="resumo">2 triplos + 4 duplos · 12 cotas</p><div class="cota">R$ 32,40<small> a cota</small></div><div class="rest">Restam 4 de 12 cotas</div><div class="barra2" aria-hidden="true"><i style="width: 67%;"></i></div><p class="pz2">Balcão até 28/11, 12h · On-line até 28/11, 15h45</p><div class="acts"><a class="btn w2" href="https://wa.me/5511914819638?text=Ol%C3%A1!%20Quero%20reservar%20uma%20cota%20do%20bol%C3%A3o%20da%20Loteca%201285%20(2%20triplos%20%2B%204%20duplos)%2C%20cota%20de%20R%24%2032%2C40." rel="noopener">Reservar pelo WhatsApp</a><a class="btn o2" href="https://www.loteriasonline.caixa.gov.br/silce-web/#/bolao-caixa/001926" target="_blank" rel="noopener" data-cx="">Comprar on-line</a><button class="btn s2" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M7 8l5-5 5 5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Compartilhar</button></div></div>
+</section>
+
+<section class="w zb" aria-label="Dona Zebra">
     <div class="fala">
       <div class="balao" id="balao">Aqui o palpite é sério. Se der zebra, eu avisei.</div>
       <button class="zebra" id="dz" type="button" aria-label="Dona Zebra: toque para ouvir"><svg class="dz" viewBox="0 0 300 320" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
@@ -363,16 +392,6 @@ dialog.av::backdrop{background:rgba(0,0,0,.72)}
       </g>
     </svg></button><button class="somb min" id="somb" type="button" aria-pressed="false" aria-label="Toque pra tocar o som"><svg class="i1" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5v11.1a3.5 3.5 0 1 0 2 3.15V8.2l7-1.75v6.15a3.5 3.5 0 1 0 2 3.15V2z"/></svg><svg class="i2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></button>
     </div>
-    <div class="chips">
-      <a class="chip r" href="#bolao">Ver o bolão</a>
-      <a data-palp hidden class="chip" href="#palpite">Dar meu palpite</a>
-    </div>
-  </div>
-</div>
-
-<main>
-<section class="w" id="bolao">
-  <div class="bolao" id="bolaoBox"><p class="eye">Bolão da semana</p><h2>Bolão da Loteca 1285</h2><ul class="bl"><li><span>Jogo</span><b>2 triplos + 4 duplos</b></li><li><span>Cotas</span><b>12 cotas</b></li></ul><div>Valor da cota</div><div class="cota">R$ 32,40</div><div class="rest">Restam 5 de 12 cotas</div><div class="barra2" aria-hidden="true"><i style="width: 58%;"></i></div><ul class="pz"><li>Retirada na lotérica: até sábado 28/11, 12h</li><li>Compra on-line: até sábado 28/11, 15h45</li></ul><div class="acts"><a class="btn w2" href="https://wa.me/5511914819638?text=Ol%C3%A1!%20Quero%20reservar%20uma%20cota%20do%20bol%C3%A3o%20da%20Loteca%201285%20(2%20triplos%20%2B%204%20duplos)%2C%20cota%20de%20R%24%2032%2C40." rel="noopener">Reservar pelo WhatsApp</a><a class="btn o2" href="https://www.loteriasonline.caixa.gov.br/silce-web/#/bolao-caixa/001926" target="_blank" rel="noopener" data-cx="">Comprar on-line</a><button class="btn s2" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M7 8l5-5 5 5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Mandar pros amigos</button></div><p class="nota">Valor da cota no balcão. Na compra on-line, a Caixa cobra uma pequena tarifa. Na Caixa, a lotérica aparece como Vilela &amp; Granhani Ltda Me (código 001926): procure a Loteca 1285.</p></div>
 </section>
 
 <section class="w" id="grade">
@@ -501,7 +520,7 @@ dialog.av::backdrop{background:rgba(0,0,0,.72)}
   </div>
 </footer>
 
-<script type="application/json" id="dados">{"concurso": 1285, "premio": "R$ 1 milhão", "especial": true, "fechamento": "2026-11-28T15:45:00-03:00", "prazos": ["Retirada na lotérica: até sábado 28/11, 12h", "Compra on-line: até sábado 28/11, 15h45"], "bolao": {"formato": "2 triplos + 4 duplos", "cotas": 12, "restam": 5, "valor": "R$ 32,40"}, "jogos": [{"casa": "Palmeiras", "fora": "Estudiantes", "quando": "Sáb 28/11 · final da Libertadores", "b": "1X"}, {"casa": "Real Madrid", "fora": "Alavés", "quando": "Sáb 28/11 · Espanhol", "b": "1"}, {"casa": "Botafogo", "fora": "Bahia", "quando": "Sáb 28/11 · Brasileirão", "b": "1"}, {"casa": "Everton", "fora": "Liverpool", "quando": "Dom 29/11 · Inglês", "b": "2"}, {"casa": "Celta", "fora": "Villarreal", "quando": "Dom 29/11 · Espanhol", "b": "1X2"}, {"casa": "Valencia", "fora": "Osasuna", "quando": "Dom 29/11 · Espanhol", "b": "1"}, {"casa": "Coritiba", "fora": "Flamengo", "quando": "Dom 29/11 · Brasileirão", "b": "X2"}, {"casa": "Vitória", "fora": "Santos", "quando": "Dom 29/11 · Brasileirão", "b": "X2"}, {"casa": "Arsenal", "fora": "Manchester City", "quando": "Dom 29/11 · Inglês", "b": "12"}, {"casa": "Corinthians", "fora": "Grêmio", "quando": "Dom 29/11 · Brasileirão", "b": "1"}, {"casa": "Mirassol", "fora": "Athletico-PR", "quando": "Dom 29/11 · Brasileirão", "b": "1X2"}, {"casa": "Internacional", "fora": "Bragantino", "quando": "Dom 29/11 · Brasileirão", "b": "1"}, {"casa": "Atlético-MG", "fora": "Vasco", "quando": "Dom 29/11 · Brasileirão", "b": "1"}, {"casa": "Real Sociedad", "fora": "Sevilla", "quando": "Dom 29/11 · Espanhol", "b": "1"}]}</script>
+<script type="application/json" id="dados">{"concurso": 1285, "premio": "R$ 1 milhão", "especial": true, "fechamento": "2026-11-28T15:45:00-03:00", "prazos": ["Retirada na lotérica: até sábado 28/11, 12h", "Compra on-line: até sábado 28/11, 15h45"], "bolao": {"formato": "2 triplos + 4 duplos", "cotas": 12, "restam": 4, "valor": "R$ 32,40"}, "jogos": [{"casa": "Palmeiras", "fora": "Estudiantes", "quando": "Sáb 28/11 · final da Libertadores", "b": "1X"}, {"casa": "Real Madrid", "fora": "Alavés", "quando": "Sáb 28/11 · Espanhol", "b": "1"}, {"casa": "Botafogo", "fora": "Bahia", "quando": "Sáb 28/11 · Brasileirão", "b": "1"}, {"casa": "Everton", "fora": "Liverpool", "quando": "Dom 29/11 · Inglês", "b": "2"}, {"casa": "Celta", "fora": "Villarreal", "quando": "Dom 29/11 · Espanhol", "b": "1X2"}, {"casa": "Valencia", "fora": "Osasuna", "quando": "Dom 29/11 · Espanhol", "b": "1"}, {"casa": "Coritiba", "fora": "Flamengo", "quando": "Dom 29/11 · Brasileirão", "b": "X2"}, {"casa": "Vitória", "fora": "Santos", "quando": "Dom 29/11 · Brasileirão", "b": "X2"}, {"casa": "Arsenal", "fora": "Manchester City", "quando": "Dom 29/11 · Inglês", "b": "12"}, {"casa": "Corinthians", "fora": "Grêmio", "quando": "Dom 29/11 · Brasileirão", "b": "1"}, {"casa": "Mirassol", "fora": "Athletico-PR", "quando": "Dom 29/11 · Brasileirão", "b": "1X2"}, {"casa": "Internacional", "fora": "Bragantino", "quando": "Dom 29/11 · Brasileirão", "b": "1"}, {"casa": "Atlético-MG", "fora": "Vasco", "quando": "Dom 29/11 · Brasileirão", "b": "1"}, {"casa": "Real Sociedad", "fora": "Sevilla", "quando": "Dom 29/11 · Espanhol", "b": "1"}]}</script>
 <script>
 /* ====== EDITAR AQUI ====== */
 var CONFIG = {
@@ -563,7 +582,6 @@ function tique(){ if(!FECHA||!TEM||RES){cdEl.hidden=true;return;} var ms=FECHA-D
 
 (function(){
   var bx=document.getElementById("bolaoBox"), b=LOTECA.bolao; bx.textContent="";
-  bx.appendChild(el("p","eye","Bolão da semana"));
   bx.appendChild(el("h2",null,"Bolão da Loteca "+LOTECA.concurso));
   if(!b){ bx.appendChild(el("p",null,"O bolão desta semana está sendo montado. Reserve sua cota pelo WhatsApp ou veja os bolões que já estão abertos na Caixa."));
     var a0=el("div","acts"), w0=el("a","btn w2","Reservar pelo WhatsApp"); w0.href=wa("Olá! Quero reservar uma cota do bolão da Loteca "+LOTECA.concurso+"."); w0.rel="noopener";
@@ -572,15 +590,14 @@ function tique(){ if(!FECHA||!TEM||RES){cdEl.hidden=true;return;} var ms=FECHA-D
     bx.appendChild(el("p","nota","Na Caixa, a lotérica aparece como Vilela & Granhani Ltda Me · código 001926.")); return; }
   var ul=el("ul","bl");
   function li(k,v){var l=el("li"); l.appendChild(el("span",null,k)); l.appendChild(el("b",null,v)); ul.appendChild(l);}
-  li("Jogo", b.formato); li("Cotas", b.cotas + " cotas"); bx.appendChild(ul);
-  bx.appendChild(el("div",null,"Valor da cota"));
-  bx.appendChild(el("div","cota",b.valor));
+  bx.appendChild(el("p","resumo", b.formato+" · "+b.cotas+" cotas"));
+  var ct=el("div","cota",b.valor); ct.appendChild(el("small",null," a cota")); bx.appendChild(ct);
   var ESG = b.restam===0, ENC = !!RES || (FECHA && Date.now()>=FECHA.getTime());
   if(b.restam!=null){ var rr=el("div","rest", ESG ? "Esgotado" : (b.restam===1?"Resta 1 de ":"Restam "+b.restam+" de ")+b.cotas+" cotas");
     if(!ESG && !ENC && b.restam<=2) rr.appendChild(el("span","ult","Últimas cotas"));
     bx.appendChild(rr);
     var vend=b.cotas-b.restam; if(!ESG && vend>0){ var br=el("div","barra2"), f=el("i"); br.setAttribute("aria-hidden","true"); f.style.width=Math.max(6,Math.round(vend/b.cotas*100))+"%"; br.appendChild(f); bx.appendChild(br); } }
-  if(LOTECA.prazos && !ENC){ var pz=el("ul","pz"); LOTECA.prazos.forEach(function(t){ pz.appendChild(el("li",null,t)); }); bx.appendChild(pz); }
+  if(LOTECA.prazos && !ENC){ bx.appendChild(el("p","pz2", LOTECA.prazos.map(function(t){ return t.replace("Retirada na lotérica: ","Balcão ").replace("Compra on-line: ","On-line ").replace(/(segunda|terça|quarta|quinta|sexta|sábado|domingo)(-feira)? /,""); }).join(" · "))); }
   var acts=el("div","acts");
   if(ENC){ bx.appendChild(el("p","fim", RES ? "Bolão encerrado. Veja abaixo a conferência dos 14 jogos." : "Bolão encerrado. A conferência sai aqui depois dos jogos.")); }
   else if(ESG){ var w1=el("a","btn w2","Me avise do próximo bolão"); w1.href=wa("Olá! O bolão da Loteca "+LOTECA.concurso+" esgotou. Me avisa do próximo?"); w1.rel="noopener"; acts.appendChild(w1); }
@@ -589,10 +606,9 @@ function tique(){ if(!FECHA||!TEM||RES){cdEl.hidden=true;return;} var ms=FECHA-D
     var o=el("a","btn o2","Comprar on-line"); o.href=CONFIG.linkCaixa; o.target="_blank"; o.rel="noopener"; o.setAttribute("data-cx","");
     acts.appendChild(w); acts.appendChild(o); }
   var s=el("button","btn s2"); s.type="button"; s.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M7 8l5-5 5 5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-  s.appendChild(document.createTextNode("Mandar pros amigos"));
+  s.appendChild(document.createTextNode("Compartilhar"));
   s.addEventListener("click",function(){ compartilhar({title:"Bolão da Loteca "+LOTECA.concurso, text:"Bolão da Loteca "+LOTECA.concurso+(LOTECA.premio?" · prêmio estimado "+LOTECA.premio:"")+" · "+b.formato+" · "+b.cotas+" cotas de "+b.valor+".", url:CONFIG.site+"/"}); });
   acts.appendChild(s); bx.appendChild(acts);
-  if(!ENC && !ESG) bx.appendChild(el("p","nota","Valor da cota no balcão. Na compra on-line, a Caixa cobra uma pequena tarifa. Na Caixa, a lotérica aparece como Vilela & Granhani Ltda Me (código 001926): procure a Loteca "+LOTECA.concurso+"."));
 })();
 
 var lg=document.getElementById("listaGrade"); lg.textContent="";
@@ -851,7 +867,8 @@ function ligaSom(b,au,inicia,ativo){
   }
   bt.addEventListener("click",toca);
   ligaSom(document.getElementById("somb"),au,toca,function(){return comSom;});
-  if(!reduz) setTimeout(show,1400);
+  /* a primeira passada é quando a zebra aparece na tela (ela fica abaixo do cartão do bolão) */
+  if(!reduz){ if("IntersectionObserver" in window) new IntersectionObserver(function(es,o){ if(es[0].isIntersecting){ o.disconnect(); setTimeout(show,500); } },{threshold:.6}).observe(bt); else setTimeout(show,1400); }
   /* o som só baixa depois que a página terminou de carregar, pra não disputar banda com o conteúdo */
   var arma=function(){ setTimeout(function(){ if("IntersectionObserver" in window) new IntersectionObserver(function(es,o){ if(es[0].isIntersecting){ au.preload="auto"; try{au.load();}catch(e){} o.disconnect(); } }).observe(bt); },2500); };
   if(document.readyState==="complete")arma(); else window.addEventListener("load",arma);
